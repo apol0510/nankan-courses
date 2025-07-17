@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nankan-course.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow specific paths (if any)
+# Disallow: /private/
+# Disallow: /admin/
+
+# Allow specific files
+Allow: /public/
+Allow: /styles.css
+Allow: /index.html
