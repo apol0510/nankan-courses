@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://nankan-course.com/sitemap.xml
+Sitemap: https://nankan-course.netlify.app/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
