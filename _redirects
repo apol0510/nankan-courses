@@ -1,0 +1,7 @@
+# 静的ファイルのリダイレクトを防ぐ
+/sitemap.xml /sitemap.xml 200!
+/sitemap.txt /sitemap.txt 200!
+/robots.txt /robots.txt 200!
+
+# その他のリクエストはindex.htmlへ（SPAの場合）
+/* /index.html 200
