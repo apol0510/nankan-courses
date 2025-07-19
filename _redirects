@@ -1,9 +1,0 @@
-# 静的ファイルは処理しない
-/sitemap.xml /sitemap.xml 200!
-/sitemap.txt /sitemap.txt 200!
-/robots.txt /robots.txt 200!
-/*.png /*.png 200!
-/*.jpg /*.jpg 200!
-/*.css /*.css 200!
-/*.js /*.js 200!
-/*.rtf /*.rtf 200!
