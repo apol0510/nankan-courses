@@ -2,5 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nankan-course.netlify.app/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nankan-course.netlify.app/ooi/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nankan-course.netlify.app/funabashi/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nankan-course.netlify.app/kawasaki/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nankan-course.netlify.app/urawa/</loc>
+    <priority>0.8</priority>
   </url>
 </urlset>
