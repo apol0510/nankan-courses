@@ -1,19 +1,25 @@
+# 静的ファイルの配信設定
+[build]
+  publish = "."
+
+# ヘッダー設定
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml; charset=UTF-8"
-    X-Robots-Tag = "noindex"
+    Cache-Control = "public, max-age=3600"
 
 [[headers]]
   for = "/sitemap.txt"
   [headers.values]
     Content-Type = "text/plain; charset=UTF-8"
-    X-Robots-Tag = "noindex"
+    Cache-Control = "public, max-age=3600"
 
 [[headers]]
   for = "/robots.txt"
   [headers.values]
     Content-Type = "text/plain; charset=UTF-8"
+    Cache-Control = "public, max-age=3600"
 
 [[headers]]
   for = "/*"
