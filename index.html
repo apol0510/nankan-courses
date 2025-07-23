@@ -149,6 +149,7 @@
 
     <main>
         <section class="hero">
+            <div class="hero-numbers" id="hero-numbers"></div>
             <div class="container">
                 <div class="hero-content">
                     <h1>南関競馬コース完全ガイド</h1>
@@ -190,12 +191,15 @@
                     </div>
                     <p class="prediction-note">※外部サイトに移動します</p>
                 </div>
-                
-                <div class="course-comparison-section">
-                    <div class="container">
-                        <h2 class="comparison-title">南関競馬場コース比較表</h2>
-                        <div class="table-wrapper">
-                            <table class="comparison-table">
+            </div>
+        </section>
+
+        <!-- Course Comparison Section -->
+        <section class="course-comparison-section">
+            <div class="container">
+                <h2 class="comparison-title">南関競馬場コース比較表</h2>
+                <div class="table-wrapper">
+                    <table class="comparison-table">
                         <thead>
                             <tr>
                                 <th>競馬場</th>
@@ -240,15 +244,16 @@
                                 <td>小回り平坦、力勝負のコース</td>
                             </tr>
                         </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    </table>
                 </div>
-                
-                <div class="quick-links-section">
-                    <div class="container">
-                        <h2 class="quick-links-title">競馬場別コース解説</h2>
-                        <div class="quick-links-grid">
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="quick-links-section">
+            <div class="container">
+                <h2 class="quick-links-title">競馬場別コース解説</h2>
+                <div class="quick-links-grid">
                             <a href="#ooi" class="quick-link-card">
                                 <div class="card-icon">🏇</div>
                                 <h3>大井競馬場</h3>
@@ -269,8 +274,6 @@
                                 <h3>浦和競馬場</h3>
                                 <p>小回り平坦の力勝負コース</p>
                             </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -672,5 +675,67 @@
             <p>最終更新日: 2025年7月20日</p>
         </div>
     </footer>
+
+    <script>
+        // Matrix-style number rain effect
+        function createMatrixNumbers() {
+            const container = document.getElementById('hero-numbers');
+            const numbers = '0123456789.-';
+            const columns = Math.floor(window.innerWidth / 20);
+            
+            // Clear existing numbers
+            container.innerHTML = '';
+            
+            for (let i = 0; i < columns; i++) {
+                setTimeout(() => {
+                    createColumn(i * 20, container, numbers);
+                }, Math.random() * 2000);
+            }
+        }
+        
+        function createColumn(x, container, numbers) {
+            const column = document.createElement('div');
+            column.style.position = 'absolute';
+            column.style.left = x + 'px';
+            column.style.top = '0';
+            column.style.height = '100%';
+            
+            // Create multiple number streams for this column
+            for (let j = 0; j < 3; j++) {
+                setTimeout(() => {
+                    createNumberStream(column, numbers);
+                }, Math.random() * 3000);
+            }
+            
+            container.appendChild(column);
+        }
+        
+        function createNumberStream(column, numbers) {
+            const stream = document.createElement('span');
+            const text = Array.from({length: Math.floor(Math.random() * 10) + 15}, () => 
+                numbers[Math.floor(Math.random() * numbers.length)]
+            ).join('\\n');
+            
+            stream.textContent = text;
+            stream.style.whiteSpace = 'pre';
+            stream.style.animationDelay = Math.random() * 2 + 's';
+            stream.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            
+            column.appendChild(stream);
+            
+            // Remove and recreate after animation
+            setTimeout(() => {
+                if (column.contains(stream)) {
+                    column.removeChild(stream);
+                }
+                // Recreate stream
+                setTimeout(() => createNumberStream(column, numbers), Math.random() * 2000);
+            }, 8000);
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', createMatrixNumbers);
+        window.addEventListener('resize', createMatrixNumbers);
+    </script>
 </body>
 </html>
