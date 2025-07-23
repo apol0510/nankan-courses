@@ -94,6 +94,359 @@ nav h1 a:hover {
     margin: 0 auto;
 }
 
+/* Newsletter Form */
+.newsletter-form {
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.newsletter-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.newsletter-form p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.email-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.email-form input[type="email"] {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.email-form input[type="email"]::placeholder {
+    color: #999;
+}
+
+.email-form input[type="email"]:focus {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+.email-form button {
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: #f39c12;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.email-form button:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4);
+}
+
+.form-note {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+/* Free Prediction Section */
+.free-prediction-section {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffc107 100%);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.free-prediction-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(180deg);
+    }
+}
+
+.free-prediction-section h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.prediction-intro {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.prediction-description {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.prediction-button-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+
+.prediction-button {
+    display: inline-block;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff416c;
+    background: white;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.prediction-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: #f8f9fa;
+}
+
+.prediction-note {
+    font-size: 0.875rem;
+    color: white;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Course Comparison Section */
+.course-comparison-section {
+    padding: 5rem 0;
+    margin-top: 3rem;
+    background: white;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-title {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.comparison-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #f8f9fa;
+}
+
+.comparison-table {
+    width: 100%;
+    background: #f8f9fa;
+    border-collapse: collapse;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    color: white;
+}
+
+.comparison-table th {
+    padding: 1.2rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+    color: #34495e;
+    font-weight: 500;
+}
+
+.comparison-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background: white;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: #e9ecef;
+}
+
+.comparison-table tbody tr:nth-child(even):hover {
+    background: white;
+}
+
+.comparison-table td:first-child {
+    font-weight: 700;
+    color: #3498db;
+}
+
+.comparison-table td[rowspan] {
+    vertical-align: middle;
+}
+
+/* Quick Links Section */
+.quick-links-section {
+    padding: 4rem 0;
+    margin-top: 3rem;
+}
+
+.quick-links-title {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.quick-links-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quick-link-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #2c3e50;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.quick-link-card:hover::before {
+    transform: translateY(0);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.quick-link-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 0.5rem;
+}
+
+.quick-link-card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
 /* Course sections */
 .course-section {
     padding: 4rem 0;
@@ -329,6 +682,76 @@ footer p:last-child {
     .container {
         padding: 0 15px;
     }
+    
+    /* Newsletter Form Responsive */
+    .newsletter-form {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .newsletter-form h3 {
+        font-size: 1.3rem;
+    }
+    
+    .email-form {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .email-form input[type="email"],
+    .email-form button {
+        width: 100%;
+    }
+    
+    .email-form button {
+        padding: 1rem;
+    }
+    
+    /* Prediction Section Responsive */
+    .free-prediction-section {
+        padding: 2.5rem 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .free-prediction-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .prediction-intro {
+        font-size: 1rem;
+    }
+    
+    .prediction-description {
+        font-size: 0.95rem;
+    }
+    
+    .prediction-button {
+        font-size: 1.1rem;
+        padding: 1rem 2.5rem;
+    }
+    
+    /* Comparison Table Responsive */
+    .course-comparison-section {
+        padding: 3rem 0;
+        margin-top: 2rem;
+    }
+    
+    .comparison-title {
+        font-size: 1.8rem;
+    }
+    
+    .table-wrapper {
+        margin: 0 -15px;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.8rem 0.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -356,6 +779,122 @@ footer p:last-child {
     
     .distance-item p {
         font-size: 0.9rem;
+    }
+    
+    /* Newsletter Form Mobile */
+    .newsletter-form {
+        padding: 1.5rem 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .newsletter-form h3 {
+        font-size: 1.1rem;
+    }
+    
+    .newsletter-form p {
+        font-size: 0.9rem;
+    }
+    
+    .email-form input[type="email"],
+    .email-form button {
+        font-size: 0.95rem;
+    }
+    
+    .form-note {
+        font-size: 0.8rem;
+    }
+    
+    /* Prediction Section Mobile */
+    .free-prediction-section {
+        padding: 2rem 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .free-prediction-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .prediction-intro {
+        font-size: 0.95rem;
+    }
+    
+    .prediction-description {
+        font-size: 0.9rem;
+    }
+    
+    .prediction-button {
+        font-size: 1rem;
+        padding: 0.875rem 2rem;
+    }
+    
+    /* Comparison Table Mobile */
+    .course-comparison-section {
+        padding: 2rem 0;
+        margin-top: 1.5rem;
+    }
+    
+    .comparison-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .table-wrapper {
+        margin: 0 -10px;
+    }
+    
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.6rem 0.3rem;
+        font-size: 0.75rem;
+    }
+    
+    .comparison-table tbody tr:hover {
+        transform: none;
+    }
+    
+    /* Quick Links Responsive */
+    .quick-links-section {
+        padding: 3rem 0;
+        margin-top: 2rem;
+    }
+    
+    .quick-links-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .quick-link-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-icon {
+        font-size: 2.5rem;
+    }
+    
+    .quick-link-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .quick-link-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Quick Links Tablet */
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 600px;
     }
 }
 
