@@ -1,0 +1,160 @@
+{{ define "main" }}
+<div class="blog-list-container">
+    <h1 class="blog-title">{{ .Title }}</h1>
+    
+    <div class="blog-posts">
+        {{ range .Paginator.Pages }}
+        <article class="blog-post-preview">
+            <h2 class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "2006年1月2日" }}
+                </time>
+                {{ with .Params.categories }}
+                <span class="categories">
+                    {{ range . }}
+                    <span class="category">{{ . }}</span>
+                    {{ end }}
+                </span>
+                {{ end }}
+            </div>
+            
+            <div class="post-summary">
+                {{ .Summary }}
+            </div>
+            
+            <a href="{{ .Permalink }}" class="read-more">続きを読む →</a>
+        </article>
+        {{ end }}
+    </div>
+    
+    {{ template "_internal/pagination.html" . }}
+</div>
+
+<style>
+.blog-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.blog-title {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.blog-post-preview {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.blog-post-preview:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.post-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.post-title a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: #3498db;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.categories {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.category {
+    background: #ecf0f1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.post-summary {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #2980b9;
+}
+
+.pagination {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.pagination a {
+    padding: 0.5rem 1rem;
+    background: #ecf0f1;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #bdc3c7;
+}
+
+.pagination .active a {
+    background: #3498db;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .blog-post-preview {
+        padding: 1rem;
+    }
+    
+    .post-title {
+        font-size: 1.25rem;
+    }
+}
+</style>
+{{ end }}

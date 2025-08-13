@@ -1,0 +1,260 @@
+{{ define "main" }}
+<article class="blog-post">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        
+        <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2006年1月2日" }}
+            </time>
+            
+            {{ with .Params.author }}
+            <span class="author">by {{ . }}</span>
+            {{ end }}
+            
+            {{ with .Params.categories }}
+            <div class="categories">
+                {{ range . }}
+                <span class="category">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            {{ with .Params.tags }}
+            <div class="tags">
+                {{ range . }}
+                <span class="tag">#{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </header>
+    
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+    
+    <footer class="post-footer">
+        <div class="post-navigation">
+            {{ with .PrevInSection }}
+            <a href="{{ .Permalink }}" class="prev-post">
+                ← {{ .Title }}
+            </a>
+            {{ end }}
+            
+            {{ with .NextInSection }}
+            <a href="{{ .Permalink }}" class="next-post">
+                {{ .Title }} →
+            </a>
+            {{ end }}
+        </div>
+        
+        <div class="back-to-list">
+            <a href="/blog/">← ブログ一覧に戻る</a>
+        </div>
+    </footer>
+</article>
+
+<style>
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background: white;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.post-title {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.author {
+    font-style: italic;
+}
+
+.categories, .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.category {
+    background: #ecf0f1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.tag {
+    color: #3498db;
+    font-size: 0.85rem;
+}
+
+.post-content {
+    color: #34495e;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.post-content h2 {
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+.post-content h3 {
+    color: #2c3e50;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.post-content pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.post-content code {
+    background: #ecf0f1;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 4px;
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.post-content th, .post-content td {
+    border: 1px solid #ecf0f1;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.post-content th {
+    background: #ecf0f1;
+    font-weight: 600;
+}
+
+.post-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #ecf0f1;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.prev-post, .next-post {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    max-width: 45%;
+}
+
+.prev-post:hover, .next-post:hover {
+    color: #2980b9;
+}
+
+.next-post {
+    text-align: right;
+    margin-left: auto;
+}
+
+.back-to-list {
+    text-align: center;
+}
+
+.back-to-list a {
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-to-list a:hover {
+    color: #34495e;
+}
+
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 1.5rem;
+    }
+    
+    .post-content {
+        font-size: 0.95rem;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+    }
+    
+    .prev-post, .next-post {
+        max-width: 100%;
+        text-align: left;
+    }
+}
+</style>
+{{ end }}
