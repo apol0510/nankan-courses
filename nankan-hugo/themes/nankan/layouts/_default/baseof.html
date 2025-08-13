@@ -55,7 +55,7 @@
     {{ end }}
 </head>
 <body>
-    <header>
+    <header id="top">
         <nav>
             <div class="container">
                 <h1><a href="{{ .Site.BaseURL }}">南関競馬コース解説</a></h1>
@@ -72,6 +72,9 @@
     <main>
         {{ block "main" . }}{{ end }}
     </main>
+    
+    <!-- Scroll to Top Button - CSS Only -->
+    <a href="#top" class="scroll-to-top" aria-label="ページトップに戻る"></a>
 
     <footer>
         <div class="container">
