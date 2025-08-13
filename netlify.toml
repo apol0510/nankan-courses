@@ -1,6 +1,6 @@
 [build]
   base = "nankan-hugo"
-  publish = "nankan-hugo/public"
+  publish = "public"
   command = "hugo --gc --minify"
 
 [build.environment]
