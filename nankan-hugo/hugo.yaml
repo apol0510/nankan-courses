@@ -11,6 +11,9 @@ params:
   
 menu:
   main:
+    - name: "ホーム"
+      url: "/"
+      weight: 5
     - name: "大井競馬場"
       url: "/ooi/"
       weight: 10
@@ -23,6 +26,9 @@ menu:
     - name: "浦和競馬場"
       url: "/urawa/"
       weight: 40
+    - name: "ブログ"
+      url: "/blog/"
+      weight: 50
 
 # SEO設定
 markup:

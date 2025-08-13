@@ -60,6 +60,14 @@
             <div class="container">
                 <h1><a href="{{ .Site.BaseURL }}">南関競馬コース解説</a></h1>
                 
+                <!-- ハンバーガーメニューボタン -->
+                <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="メニューを開く">
+                <label for="hamburger-toggle" class="hamburger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+                
                 <ul class="nav-links">
                     {{ range .Site.Menus.main }}
                     <li><a href="{{ .URL }}">{{ .Name }}</a></li>
