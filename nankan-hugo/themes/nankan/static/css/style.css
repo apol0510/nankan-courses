@@ -215,20 +215,20 @@ nav h1 a:hover {
     text-shadow: inherit;
 }
 
-/* Mobile強化：0.5秒サイクルで高速落下 */
-.matrix-column:nth-child(1) { left: 2%; animation-delay: 0s; animation-duration: 0.5s; }
-.matrix-column:nth-child(2) { left: 8%; animation-delay: 0.1s; animation-duration: 0.5s; }
-.matrix-column:nth-child(3) { left: 15%; animation-delay: 0.2s; animation-duration: 0.5s; }
-.matrix-column:nth-child(4) { left: 22%; animation-delay: 0.3s; animation-duration: 0.5s; }
-.matrix-column:nth-child(5) { left: 30%; animation-delay: 0.4s; animation-duration: 0.5s; }
-.matrix-column:nth-child(6) { left: 38%; animation-delay: 0s; animation-duration: 0.5s; }
-.matrix-column:nth-child(7) { left: 46%; animation-delay: 0.1s; animation-duration: 0.5s; }
-.matrix-column:nth-child(8) { left: 54%; animation-delay: 0.2s; animation-duration: 0.5s; }
-.matrix-column:nth-child(9) { left: 62%; animation-delay: 0.3s; animation-duration: 0.5s; }
-.matrix-column:nth-child(10) { left: 70%; animation-delay: 0.4s; animation-duration: 0.5s; }
-.matrix-column:nth-child(11) { left: 78%; animation-delay: 0s; animation-duration: 0.5s; }
-.matrix-column:nth-child(12) { left: 86%; animation-delay: 0.1s; animation-duration: 0.5s; }
-.matrix-column:nth-child(13) { left: 94%; animation-delay: 0.2s; animation-duration: 0.5s; }
+/* Mobile強化：0.5秒間隔で落ち始め、3秒で落下完了 */
+.matrix-column:nth-child(1) { left: 2%; animation-delay: 0s; animation-duration: 3s; }
+.matrix-column:nth-child(2) { left: 8%; animation-delay: 0.5s; animation-duration: 3s; }
+.matrix-column:nth-child(3) { left: 15%; animation-delay: 1s; animation-duration: 3s; }
+.matrix-column:nth-child(4) { left: 22%; animation-delay: 1.5s; animation-duration: 3s; }
+.matrix-column:nth-child(5) { left: 30%; animation-delay: 2s; animation-duration: 3s; }
+.matrix-column:nth-child(6) { left: 38%; animation-delay: 2.5s; animation-duration: 3s; }
+.matrix-column:nth-child(7) { left: 46%; animation-delay: 0s; animation-duration: 3s; }
+.matrix-column:nth-child(8) { left: 54%; animation-delay: 0.5s; animation-duration: 3s; }
+.matrix-column:nth-child(9) { left: 62%; animation-delay: 1s; animation-duration: 3s; }
+.matrix-column:nth-child(10) { left: 70%; animation-delay: 1.5s; animation-duration: 3s; }
+.matrix-column:nth-child(11) { left: 78%; animation-delay: 2s; animation-duration: 3s; }
+.matrix-column:nth-child(12) { left: 86%; animation-delay: 2.5s; animation-duration: 3s; }
+.matrix-column:nth-child(13) { left: 94%; animation-delay: 3s; animation-duration: 3s; }
 
 /* Desktop版は少し抑える */
 @media (min-width: 769px) {
