@@ -11,6 +11,7 @@ This is a **100% static website** built with Hugo, dedicated to explaining and a
 - **Static Site Generator**: Built with Hugo for content management and templating
 - **Fully Static**: Can be served from any static hosting service without server-side processing
 - **JavaScript-Free**: All animations, responsive menus, and visual effects use CSS-only techniques
+- **Mobile-First Design**: Primary focus on mobile user experience and performance optimization
 
 ## Architecture
 
@@ -29,24 +30,37 @@ This is a **100% static website** built with Hugo, dedicated to explaining and a
   - Course-specific color theming
 
 **Technical Features:**
-- **CSS-Only Responsive Design**: Mobile-first responsive layouts using CSS Grid and Flexbox
-- **No JavaScript**: All interactive elements (navigation, animations) use pure CSS
-- **Accessibility Optimized**: Focus states, semantic HTML, proper ARIA labels
-- **SEO Optimized**: Structured data, meta tags, sitemap generation
-- **Performance Focused**: Lightweight, fast-loading static assets only
+- **Mobile-First Responsive Design**: Primary optimization for mobile devices with progressive enhancement for desktop
+- **CSS-Only Implementation**: All interactive elements (navigation, animations) use pure CSS without JavaScript
+- **Performance-Optimized for Mobile**: Lightweight assets, optimized images, minimal CSS animations on mobile devices
+- **Accessibility Optimized**: Focus states, semantic HTML, proper ARIA labels, screen reader friendly
+- **SEO Optimized**: Structured data, meta tags, sitemap generation, mobile-friendly indexing
+- **Cross-Device Compatibility**: Responsive layouts using CSS Grid and Flexbox
+- **Battery-Conscious Design**: Reduced animations on mobile to preserve battery life
 - **Print-Friendly**: Optimized CSS for print media
 
 ## Development
 
 **Hugo Static Site Generator:** Built using Hugo with custom theme development.
 
+**Mobile-First Development Philosophy:** This website prioritizes mobile user experience:
+- **Primary Target**: Mobile devices (smartphones, tablets)
+- **Progressive Enhancement**: Desktop features are added on top of mobile base
+- **Performance Priority**: Mobile battery life and data usage optimization
+- **Touch-First Interaction**: Navigation and UI designed for touch interfaces
+
 **No JavaScript Dependencies:** This website intentionally avoids JavaScript to ensure:
 - Maximum compatibility across all browsers and devices
-- Optimal performance and loading speed
+- Optimal performance and loading speed on mobile networks
 - Enhanced accessibility for screen readers and assistive technologies
+- Reduced battery consumption on mobile devices
 - Simplified maintenance and debugging
 
-**Testing:** Run `hugo server` to test changes locally.
+**Testing:** 
+- **Primary Testing**: Mobile devices and responsive design testing
+- **Development Server**: Run `hugo server` to test changes locally
+- **Mobile Testing Priority**: Always test on mobile devices first, then desktop
+- **Performance Testing**: Monitor loading speed and battery usage on mobile
 
 **Content Updates:** 
 - Course data and race analysis are written in Markdown files in the `content/` directory
