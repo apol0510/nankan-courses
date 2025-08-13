@@ -1,3 +1,11 @@
+[build]
+  base = "nankan-hugo"
+  publish = "nankan-hugo/public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.148.2"
+
 [[headers]]
   for = "/*"
   [headers.values]
