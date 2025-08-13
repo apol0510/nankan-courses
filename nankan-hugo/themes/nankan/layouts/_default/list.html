@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article class="course-section">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        
+        {{ with .Params.course_image }}
+        <div class="course-image">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}コース図" title="{{ $.Title }}コースの詳細図" loading="lazy" />
+        </div>
+        {{ end }}
+
+        {{ if .Params.course_specs }}
+        <div class="course-data">
+            <h2>{{ .Title }}のコース特徴・基本データ</h2>
+            <table class="course-specs">
+                {{ range $key, $value := .Params.course_specs }}
+                <tr>
+                    <th>{{ $key }}</th>
+                    <td>{{ $value | safeHTML }}</td>
+                </tr>
+                {{ end }}
+            </table>
+        </div>
+        {{ end }}
+
+        <div class="content">
+            {{ .Content }}
+        </div>
+
+        {{ if .Params.distances }}
+        <div class="distance-explanations">
+            {{ range .Params.distances }}
+            <div class="distance-item">
+                <h3>{{ .title }}</h3>
+                <p>{{ .description | safeHTML }}</p>
+                {{ with .image }}
+                <img src="{{ . | relURL }}" alt="コース図" title="コースレイアウト" loading="lazy" />
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <nav class="section-nav" aria-label="他の競馬場へ">
+            <h3>他の南関競馬場も見る</h3>
+            <ul>
+                {{ $currentSection := .Section }}
+                {{ range .Site.Menus.main }}
+                    {{ if ne .URL (printf "/%s/" $currentSection) }}
+                    <li><a href="{{ .URL }}">{{ .Name }}の攻略法を見る →</a></li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</article>
+{{ end }}

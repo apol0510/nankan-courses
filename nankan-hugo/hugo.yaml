@@ -1,0 +1,37 @@
+baseURL: "https://nankan-course.netlify.app/"
+languageCode: "ja"
+title: "南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】"
+theme: "nankan"
+
+params:
+  description: "南関競馬（大井・船橋・川崎・浦和）の距離別コース攻略法を徹底解説。枠順有利不利、ペース傾向、地方競馬予想に役立つコース特徴を現役競馬ファンが分析。初心者から上級者まで必見の攻略情報満載。"
+  keywords: "南関競馬,船橋競馬場,川崎競馬場,大井競馬場,浦和競馬場,コース解説,競馬予想,枠順,攻略法,地方競馬"
+  author: "南関競馬コース解説"
+  language: "ja"
+  
+menu:
+  main:
+    - name: "大井競馬場"
+      url: "/ooi/"
+      weight: 10
+    - name: "船橋競馬場"
+      url: "/funabashi/"
+      weight: 20
+    - name: "川崎競馬場"
+      url: "/kawasaki/"
+      weight: 30
+    - name: "浦和競馬場"
+      url: "/urawa/"
+      weight: 40
+
+# SEO設定
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# サイトマップ設定
+sitemap:
+  changefreq: 'monthly'
+  priority: 0.5
+  filename: 'sitemap.xml'

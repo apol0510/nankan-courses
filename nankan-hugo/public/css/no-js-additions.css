@@ -1,0 +1,209 @@
+/* CSS-only Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.mobile-menu-label {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-label span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger animation */
+.mobile-menu-toggle:checked + .mobile-menu-label span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle:checked + .mobile-menu-label span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle:checked + .mobile-menu-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* CSS-only Matrix Effect */
+.hero-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.number-column {
+    position: absolute;
+    top: -100px;
+    width: 20px;
+    height: 120%;
+    opacity: 0.3;
+    animation: matrix-fall 8s linear infinite;
+}
+
+.number-column span {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: pre-line;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+.number-column:nth-child(1) {
+    animation-delay: 0s;
+    left: 5%;
+}
+
+.number-column:nth-child(2) {
+    animation-delay: 1s;
+    left: 25%;
+}
+
+.number-column:nth-child(3) {
+    animation-delay: 2s;
+    left: 45%;
+}
+
+.number-column:nth-child(4) {
+    animation-delay: 3s;
+    left: 65%;
+}
+
+.number-column:nth-child(5) {
+    animation-delay: 4s;
+    left: 85%;
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .mobile-menu-label {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .mobile-menu-toggle:checked ~ .nav-links {
+        right: 0;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInRight 0.3s ease forwards;
+    }
+    
+    .mobile-menu-toggle:checked ~ .nav-links li {
+        animation: slideInRight 0.3s ease forwards;
+    }
+    
+    .nav-links li:nth-child(1) { animation-delay: 0.1s; }
+    .nav-links li:nth-child(2) { animation-delay: 0.2s; }
+    .nav-links li:nth-child(3) { animation-delay: 0.3s; }
+    .nav-links li:nth-child(4) { animation-delay: 0.4s; }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 200px;
+        text-align: center;
+    }
+    
+    /* Hide matrix effect on mobile for performance */
+    .hero-numbers {
+        display: none;
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Enhanced number columns for larger screens */
+@media (min-width: 769px) {
+    .hero-numbers {
+        display: block;
+    }
+    
+    /* Add more columns for wider screens */
+    .hero-numbers::before,
+    .hero-numbers::after {
+        content: "2.4\A7.1\A1.8\A5.4\A9.6\A2.7\A4.3\A8.1\A6.9\A1.5\A3.8\A7.2\A5.1\A9.4\A2.6";
+        position: absolute;
+        top: -100px;
+        width: 20px;
+        height: 120%;
+        opacity: 0.2;
+        animation: matrix-fall 10s linear infinite;
+        color: #00ff41;
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        line-height: 1.2;
+        white-space: pre-line;
+        text-shadow: 0 0 3px #00ff41;
+        pointer-events: none;
+    }
+    
+    .hero-numbers::before {
+        left: 15%;
+        animation-delay: 5s;
+    }
+    
+    .hero-numbers::after {
+        left: 75%;
+        animation-delay: 6s;
+    }
+}
