@@ -2,9 +2,35 @@
 <div class="blog-list-container">
     <h1 class="blog-title">{{ .Title }}</h1>
     
+    <!-- カテゴリフィルターボタン -->
+    <div class="category-filters">
+        <input type="radio" name="category-filter" id="filter-all" class="filter-input" checked>
+        <label for="filter-all" class="filter-button">全て</label>
+        
+        <input type="radio" name="category-filter" id="filter-ooi" class="filter-input">
+        <label for="filter-ooi" class="filter-button">大井</label>
+        
+        <input type="radio" name="category-filter" id="filter-funabashi" class="filter-input">
+        <label for="filter-funabashi" class="filter-button">船橋</label>
+        
+        <input type="radio" name="category-filter" id="filter-kawasaki" class="filter-input">
+        <label for="filter-kawasaki" class="filter-button">川崎</label>
+        
+        <input type="radio" name="category-filter" id="filter-urawa" class="filter-input">
+        <label for="filter-urawa" class="filter-button">浦和</label>
+    </div>
+    
     <div class="blog-cards-grid">
         {{ range .Paginator.Pages }}
-        <article class="blog-card">
+        {{ $categories := .Params.categories }}
+        {{ $categoryClass := "" }}
+        {{ range $categories }}
+            {{ if eq . "大井" }}{{ $categoryClass = "category-ooi" }}{{ end }}
+            {{ if eq . "船橋" }}{{ $categoryClass = "category-funabashi" }}{{ end }}
+            {{ if eq . "川崎" }}{{ $categoryClass = "category-kawasaki" }}{{ end }}
+            {{ if eq . "浦和" }}{{ $categoryClass = "category-urawa" }}{{ end }}
+        {{ end }}
+        <article class="blog-card {{ $categoryClass }}">
             <div class="card-header">
                 <h2 class="card-title">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -249,6 +275,111 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
     .blog-cards-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* カテゴリフィルターのスタイル */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-input {
+    display: none;
+}
+
+.filter-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #c9bdf2;
+    border: 2px solid rgba(113, 75, 247, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-button:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: rgba(113, 75, 247, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+}
+
+.filter-input:checked + .filter-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: rgba(113, 75, 247, 0.8);
+    box-shadow: 0 4px 20px rgba(113, 75, 247, 0.4);
+}
+
+/* フィルター機能（CSS Only） */
+.blog-card {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* デフォルト：全て表示 */
+#filter-all:checked ~ .blog-cards-grid .blog-card {
+    display: block;
+}
+
+/* 各カテゴリのフィルター */
+#filter-ooi:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-ooi:checked ~ .blog-cards-grid .blog-card.category-ooi {
+    display: block;
+}
+
+#filter-funabashi:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-funabashi:checked ~ .blog-cards-grid .blog-card.category-funabashi {
+    display: block;
+}
+
+#filter-kawasaki:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-kawasaki:checked ~ .blog-cards-grid .blog-card.category-kawasaki {
+    display: block;
+}
+
+#filter-urawa:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-urawa:checked ~ .blog-cards-grid .blog-card.category-urawa {
+    display: block;
+}
+
+/* モバイル対応 */
+@media (max-width: 480px) {
+    .category-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .filter-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 </style>
