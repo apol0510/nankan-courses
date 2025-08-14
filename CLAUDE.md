@@ -56,6 +56,50 @@ This is a **100% static website** built with Hugo, dedicated to explaining and a
 - Reduced battery consumption on mobile devices
 - Simplified maintenance and debugging
 
+### 開発環境とサーバー管理
+
+**重要：ローカル開発時の注意事項**
+
+#### 開発サーバーの管理
+- **複数のサーバーを同時実行しない**: 作業開始前に必ず既存のサーバープロセスを確認・停止する
+- **サーバー起動前のチェック**: `ps aux | grep -E "(hugo|server|http\.server)"` でプロセス確認
+- **不要なサーバーの停止**: `pkill -f "python.*http.server"` または `pkill -f "hugo server"`
+
+**注意事項:**
+- 単一サーバー原則: 同時に複数のサーバーを起動しない
+- ポート管理: プロジェクトごとに専用ポートを使用する
+- プロジェクト分離: 他のプロジェクトと混在させない
+- キャッシュ管理: ブラウザキャッシュは定期的にクリアする
+
+**各プロジェクトでの調整箇所**:
+- `[プロジェクトのパス]`: 各プロジェクトの実際のパス
+- `[ポート番号]`: プロジェクトで使用するポート（例: 1313, 8000, 3000など）
+- `[サーバー起動コマンド]`: プロジェクトに応じたサーバー起動コマンド
+
+#### 開発ワークフロー
+1. **作業開始時**: 既存サーバープロセスをすべて停止
+2. **Hugo開発**: `hugo server` を単一プロジェクトでのみ実行
+3. **作業終了時**: `Ctrl+C` でサーバーを確実に停止
+4. **プロセス確認**: `ps aux | grep server` で残存プロセスがないか確認
+
+#### よくある問題の回避
+- **Python HTTPサーバーの放置禁止**: `python3 -m http.server` 使用後は必ず停止
+- **複数Hugoサイトの同時起動禁止**: 異なるプロジェクトが混在表示される原因
+- **ポート競合の回避**: 使用ポートを明確に管理する
+
+**開発前チェックコマンド**:
+```bash
+# 実行中サーバーの確認
+ps aux | grep -E "(hugo|server|http\.server)"
+
+# 不要プロセスの一括停止
+pkill -f "python.*http.server" && pkill -f "hugo server"
+
+# ポート使用状況の確認
+lsof -i :1313  # Hugo標準ポート
+lsof -i :8000  # Python HTTPサーバー
+```
+
 **Testing:** 
 - **Primary Testing**: Mobile devices and responsive design testing
 - **Development Server**: Run `hugo server` to test changes locally
