@@ -3,20 +3,17 @@
     <h1 class="blog-title">{{ .Title }}</h1>
     
     <!-- カテゴリフィルターボタン -->
+    <input type="radio" name="category-filter" id="filter-all" class="filter-input" checked>
+    <input type="radio" name="category-filter" id="filter-ooi" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-funabashi" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-kawasaki" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-urawa" class="filter-input">
+    
     <div class="category-filters">
-        <input type="radio" name="category-filter" id="filter-all" class="filter-input" checked>
         <label for="filter-all" class="filter-button">全て</label>
-        
-        <input type="radio" name="category-filter" id="filter-ooi" class="filter-input">
         <label for="filter-ooi" class="filter-button">大井</label>
-        
-        <input type="radio" name="category-filter" id="filter-funabashi" class="filter-input">
         <label for="filter-funabashi" class="filter-button">船橋</label>
-        
-        <input type="radio" name="category-filter" id="filter-kawasaki" class="filter-input">
         <label for="filter-kawasaki" class="filter-button">川崎</label>
-        
-        <input type="radio" name="category-filter" id="filter-urawa" class="filter-input">
         <label for="filter-urawa" class="filter-button">浦和</label>
     </div>
     
