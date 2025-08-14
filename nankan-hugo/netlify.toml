@@ -1,6 +1,6 @@
 [build]
-  publish = "nankan-hugo/public"
-  command = "cd nankan-hugo && hugo"
+  publish = "public"
+  command = "hugo"
 
 [context.production.environment]
   HUGO_VERSION = "0.148.2"
