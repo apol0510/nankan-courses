@@ -632,15 +632,20 @@ nav h1 a:hover {
 .quick-links-section {
     padding: 4rem 0;
     margin-top: 3rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(113, 75, 247, 0.2);
 }
 
 .quick-links-title {
     font-size: 2.2rem;
-    color: #2c3e50;
+    color: white;
     text-align: center;
     margin-bottom: 3rem;
     font-weight: 700;
     position: relative;
+    text-shadow: 0 2px 10px rgba(113, 75, 247, 0.3);
 }
 
 .quick-links-title::after {
@@ -651,8 +656,9 @@ nav h1 a:hover {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(90deg, #714bf7, #9b59b6);
     border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(113, 75, 247, 0.5);
 }
 
 .quick-links-grid {
@@ -664,16 +670,18 @@ nav h1 a:hover {
 }
 
 .quick-link-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 2.5rem 2rem;
     text-align: center;
     text-decoration: none;
-    color: #2c3e50;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .quick-link-card::before {
@@ -683,14 +691,16 @@ nav h1 a:hover {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(90deg, #714bf7, #9b59b6);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
 }
 
 .quick-link-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 35px rgba(113, 75, 247, 0.3);
+    background: rgba(113, 75, 247, 0.1);
+    border: 1px solid rgba(113, 75, 247, 0.3);
 }
 
 .quick-link-card:hover::before {
@@ -705,13 +715,14 @@ nav h1 a:hover {
 .quick-link-card h3 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #3498db;
+    color: #714bf7;
     margin-bottom: 0.5rem;
+    text-shadow: 0 1px 5px rgba(113, 75, 247, 0.3);
 }
 
 .quick-link-card p {
     font-size: 1rem;
-    color: #7f8c8d;
+    color: #d0d0d0;
     margin: 0;
 }
 
@@ -719,16 +730,19 @@ nav h1 a:hover {
 .section-nav {
     margin-top: 3rem;
     padding: 2rem;
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section-nav h3 {
     font-size: 1.4rem;
-    color: #2c3e50;
+    color: white;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-shadow: 0 2px 10px rgba(113, 75, 247, 0.3);
 }
 
 .section-nav ul {
@@ -807,25 +821,23 @@ nav h1 a:hover {
 /* Course sections */
 .course-section {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: white;
     margin: 2rem 0;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(113, 75, 247, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .course-section:nth-child(even) {
-    background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+    background: #f8f9fa;
 }
 
 .course-section h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
-    color: white;
+    color: #2c3e50;
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
-    text-shadow: 0 2px 10px rgba(113, 75, 247, 0.3);
 }
 
 .course-section h2::after {
@@ -836,27 +848,23 @@ nav h1 a:hover {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #714bf7, #9b59b6);
+    background: linear-gradient(90deg, #3498db, #2ecc71);
     border-radius: 2px;
-    box-shadow: 0 2px 10px rgba(113, 75, 247, 0.5);
 }
 
 /* Course data */
 .course-data {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
+    background: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 3rem;
-    border-left: 4px solid #714bf7;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #3498db;
 }
 
 .course-data h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: white;
-    text-shadow: 0 1px 5px rgba(113, 75, 247, 0.3);
+    color: #2c3e50;
 }
 
 .course-data ul {
@@ -867,21 +875,17 @@ nav h1 a:hover {
 }
 
 .course-data li {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: white;
     padding: 1rem;
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #e9ecef;
     font-weight: 500;
-    color: #e0e0e0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .course-data li:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(113, 75, 247, 0.3);
-    background: rgba(113, 75, 247, 0.1);
-    border: 1px solid rgba(113, 75, 247, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Course image */
@@ -905,35 +909,31 @@ nav h1 a:hover {
 }
 
 .distance-item {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
+    background: white;
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #e9ecef;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
 }
 
 .distance-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(113, 75, 247, 0.3);
-    background: rgba(113, 75, 247, 0.08);
-    border: 1px solid rgba(113, 75, 247, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .distance-item h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: white;
+    color: #2c3e50;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #714bf7;
+    border-bottom: 2px solid #3498db;
     display: inline-block;
-    text-shadow: 0 1px 5px rgba(113, 75, 247, 0.3);
 }
 
 .distance-item p {
     line-height: 1.8;
-    color: #d0d0d0;
+    color: #555;
     font-size: 0.95rem;
 }
 
