@@ -2,31 +2,38 @@
 <div class="blog-list-container">
     <h1 class="blog-title">{{ .Title }}</h1>
     
-    <div class="blog-posts">
+    <div class="blog-cards-grid">
         {{ range .Paginator.Pages }}
-        <article class="blog-post-preview">
-            <h2 class="post-title">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </h2>
+        <article class="blog-card">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </div>
             
-            <div class="post-meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">
-                    {{ .Date.Format "2006年1月2日" }}
-                </time>
+            <div class="card-body">
+                <div class="card-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "2006年1月2日" }}
+                    </time>
+                </div>
+                
                 {{ with .Params.categories }}
-                <span class="categories">
+                <div class="card-categories">
                     {{ range . }}
-                    <span class="category">{{ . }}</span>
+                    <span class="category-tag">{{ . }}</span>
                     {{ end }}
-                </span>
+                </div>
                 {{ end }}
+                
+                <div class="card-summary">
+                    {{ .Summary }}
+                </div>
             </div>
             
-            <div class="post-summary">
-                {{ .Summary }}
+            <div class="card-footer">
+                <a href="{{ .Permalink }}" class="card-link">続きを読む →</a>
             </div>
-            
-            <a href="{{ .Permalink }}" class="read-more">続きを読む →</a>
         </article>
         {{ end }}
     </div>
@@ -36,86 +43,134 @@
 
 <style>
 .blog-list-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
 }
 
 .blog-title {
     color: #2c3e50;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-.blog-posts {
+.blog-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    height: 100%;
 }
 
-.blog-post-preview {
-    background: white;
-    border-radius: 8px;
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
 }
 
-.blog-post-preview:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+.card-title {
+    margin: 0;
+    font-size: 1.4rem;
 }
 
-.post-title {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.5rem;
-}
-
-.post-title a {
-    color: #2c3e50;
+.card-title a {
+    color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
-.post-title a:hover {
-    color: #3498db;
+.card-title a:hover {
+    opacity: 0.9;
 }
 
-.post-meta {
-    font-size: 0.9rem;
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-meta {
+    font-size: 0.85rem;
     color: #7f8c8d;
+    margin-bottom: 0.75rem;
+}
+
+.card-meta time {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.card-categories {
     margin-bottom: 1rem;
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
-}
-
-.categories {
-    display: flex;
     gap: 0.5rem;
 }
 
-.category {
-    background: #ecf0f1;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
+.category-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
 }
 
-.post-summary {
+.category-tag:hover {
+    transform: scale(1.05);
+}
+
+.card-summary {
     color: #34495e;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.read-more {
-    color: #3498db;
+.card-footer {
+    padding: 0 1.5rem 1.5rem;
+    margin-top: auto;
+}
+
+.card-link {
+    display: inline-block;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.read-more:hover {
-    color: #2980b9;
+.card-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
 }
 
 .pagination {
@@ -134,26 +189,53 @@
     background: #ecf0f1;
     color: #2c3e50;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .pagination a:hover {
-    background: #bdc3c7;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.05);
 }
 
 .pagination .active a {
-    background: #3498db;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
 @media (max-width: 768px) {
-    .blog-post-preview {
-        padding: 1rem;
+    .blog-title {
+        font-size: 2rem;
     }
     
-    .post-title {
-        font-size: 1.25rem;
+    .blog-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .blog-card {
+        margin: 0 auto;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-header {
+        padding: 1.25rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .blog-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
