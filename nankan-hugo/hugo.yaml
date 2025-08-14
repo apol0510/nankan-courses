@@ -13,22 +13,22 @@ menu:
   main:
     - name: "ホーム"
       url: "/"
-      weight: 5
-    - name: "大井競馬場"
-      url: "/ooi/"
       weight: 10
-    - name: "船橋競馬場"
-      url: "/funabashi/"
-      weight: 20
-    - name: "川崎競馬場"
-      url: "/kawasaki/"
-      weight: 30
-    - name: "浦和競馬場"
-      url: "/urawa/"
-      weight: 40
     - name: "ブログ"
       url: "/blog/"
+      weight: 20
+    - name: "大井"
+      url: "/ooi/"
+      weight: 30
+    - name: "船橋"
+      url: "/funabashi/"
+      weight: 40
+    - name: "川崎"
+      url: "/kawasaki/"
       weight: 50
+    - name: "浦和"
+      url: "/urawa/"
+      weight: 60
 
 # SEO設定
 markup:
