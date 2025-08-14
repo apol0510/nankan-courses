@@ -23,7 +23,7 @@
             {{ with .Params.tags }}
             <div class="tags">
                 {{ range . }}
-                <a href="/tags/{{ . | urlize }}/" class="tag">#{{ . }}</a>
+                <a href="/blog/" class="tag" onclick="searchByTag('{{ . }}'); return false;">#{{ . }}</a>
                 {{ end }}
             </div>
             {{ end }}
@@ -461,4 +461,11 @@ body {
     }
 }
 </style>
+
+<script>
+function searchByTag(tag) {
+    // タグをクリックした場合はブログ一覧ページにリダイレクトして検索
+    window.location.href = '/blog/?search=' + encodeURIComponent(tag);
+}
+</script>
 {{ end }}
