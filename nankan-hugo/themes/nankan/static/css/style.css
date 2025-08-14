@@ -975,7 +975,7 @@ nav h1 a:hover {
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #07000f 0%, #1b162f 100%);
     color: white;
     padding: 3rem 0 2rem;
     margin-top: 4rem;
