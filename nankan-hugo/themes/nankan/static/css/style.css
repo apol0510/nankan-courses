@@ -807,23 +807,25 @@ nav h1 a:hover {
 /* Course sections */
 .course-section {
     padding: 4rem 0;
-    background: white;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     margin: 2rem 0;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(113, 75, 247, 0.2);
 }
 
 .course-section:nth-child(even) {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
 }
 
 .course-section h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: white;
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(113, 75, 247, 0.3);
 }
 
 .course-section h2::after {
@@ -834,23 +836,27 @@ nav h1 a:hover {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(90deg, #714bf7, #9b59b6);
     border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(113, 75, 247, 0.5);
 }
 
 /* Course data */
 .course-data {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 3rem;
-    border-left: 4px solid #3498db;
+    border-left: 4px solid #714bf7;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .course-data h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: white;
+    text-shadow: 0 1px 5px rgba(113, 75, 247, 0.3);
 }
 
 .course-data ul {
@@ -861,17 +867,21 @@ nav h1 a:hover {
 }
 
 .course-data li {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 6px;
-    border: 1px solid #e9ecef;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     font-weight: 500;
+    color: #e0e0e0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .course-data li:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(113, 75, 247, 0.3);
+    background: rgba(113, 75, 247, 0.1);
+    border: 1px solid rgba(113, 75, 247, 0.3);
 }
 
 /* Course image */
@@ -895,31 +905,35 @@ nav h1 a:hover {
 }
 
 .distance-item {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid #e9ecef;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
 }
 
 .distance-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(113, 75, 247, 0.3);
+    background: rgba(113, 75, 247, 0.08);
+    border: 1px solid rgba(113, 75, 247, 0.3);
 }
 
 .distance-item h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: white;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #714bf7;
     display: inline-block;
+    text-shadow: 0 1px 5px rgba(113, 75, 247, 0.3);
 }
 
 .distance-item p {
     line-height: 1.8;
-    color: #555;
+    color: #d0d0d0;
     font-size: 0.95rem;
 }
 
