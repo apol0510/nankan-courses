@@ -87,7 +87,7 @@
             
             <div class="categories">
                 
-                <span class="category">船橋</span>
+                <a href="/categories/%E8%88%B9%E6%A9%8B/" class="category">船橋</a>
                 
             </div>
             
@@ -95,11 +95,11 @@
             
             <div class="tags">
                 
-                <span class="tag">#1000m</span>
+                <a href="/tags/1000m/" class="tag">#1000m</a>
                 
-                <span class="tag">#直線</span>
+                <a href="/tags/%E7%9B%B4%E7%B7%9A/" class="tag">#直線</a>
                 
-                <span class="tag">#スプリント</span>
+                <a href="/tags/%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88/" class="tag">#スプリント</a>
                 
             </div>
             
@@ -265,11 +265,15 @@ body {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .category:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    color: white;
 }
 
 .tag {
@@ -280,11 +284,15 @@ body {
     border-radius: 15px;
     border: 1px solid rgba(113, 75, 247, 0.3);
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .tag:hover {
     background: rgba(113, 75, 247, 0.2);
     transform: translateY(-2px);
+    color: #c9bdf2;
+    box-shadow: 0 2px 8px rgba(113, 75, 247, 0.2);
 }
 
 .post-content {

@@ -85,7 +85,7 @@
             
             <div class="categories">
                 
-                <span class="category">浦和</span>
+                <a href="/categories/%E6%B5%A6%E5%92%8C/" class="category">浦和</a>
                 
             </div>
             
@@ -93,19 +93,19 @@
             
             <div class="tags">
                 
-                <span class="tag">#800m</span>
+                <a href="/tags/800m/" class="tag">#800m</a>
                 
-                <span class="tag">#短距離</span>
+                <a href="/tags/%E7%9F%AD%E8%B7%9D%E9%9B%A2/" class="tag">#短距離</a>
                 
-                <span class="tag">#スプリント</span>
+                <a href="/tags/%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88/" class="tag">#スプリント</a>
                 
-                <span class="tag">#浦和</span>
+                <a href="/tags/%E6%B5%A6%E5%92%8C/" class="tag">#浦和</a>
                 
-                <span class="tag">#スタート</span>
+                <a href="/tags/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88/" class="tag">#スタート</a>
                 
-                <span class="tag">#枠順</span>
+                <a href="/tags/%E6%9E%A0%E9%A0%86/" class="tag">#枠順</a>
                 
-                <span class="tag">#馬番</span>
+                <a href="/tags/%E9%A6%AC%E7%95%AA/" class="tag">#馬番</a>
                 
             </div>
             
@@ -556,11 +556,15 @@ body {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .category:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    color: white;
 }
 
 .tag {
@@ -571,11 +575,15 @@ body {
     border-radius: 15px;
     border: 1px solid rgba(113, 75, 247, 0.3);
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .tag:hover {
     background: rgba(113, 75, 247, 0.2);
     transform: translateY(-2px);
+    color: #c9bdf2;
+    box-shadow: 0 2px 8px rgba(113, 75, 247, 0.2);
 }
 
 .post-content {

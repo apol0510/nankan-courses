@@ -47,7 +47,7 @@
                 {{ with .Params.categories }}
                 <div class="card-categories">
                     {{ range . }}
-                    <span class="category-tag">{{ . }}</span>
+                    <a href="/categories/{{ . | urlize }}/" class="category-tag">{{ . }}</a>
                     {{ end }}
                 </div>
                 {{ end }}
@@ -172,11 +172,14 @@ body {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
 }
 
 .category-tag:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    color: white;
 }
 
 .card-summary {

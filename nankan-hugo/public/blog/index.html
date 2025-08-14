@@ -119,7 +119,7 @@
                 
                 <div class="card-categories">
                     
-                    <span class="category-tag">浦和</span>
+                    <a href="/categories/%E6%B5%A6%E5%92%8C/" class="category-tag">浦和</a>
                     
                 </div>
                 
@@ -301,7 +301,7 @@
                 
                 <div class="card-categories">
                     
-                    <span class="category-tag">大井</span>
+                    <a href="/categories/%E5%A4%A7%E4%BA%95/" class="category-tag">大井</a>
                     
                 </div>
                 
@@ -367,7 +367,7 @@
                 
                 <div class="card-categories">
                     
-                    <span class="category-tag">船橋</span>
+                    <a href="/categories/%E8%88%B9%E6%A9%8B/" class="category-tag">船橋</a>
                     
                 </div>
                 
@@ -454,7 +454,7 @@
                 
                 <div class="card-categories">
                     
-                    <span class="category-tag">川崎</span>
+                    <a href="/categories/%E5%B7%9D%E5%B4%8E/" class="category-tag">川崎</a>
                     
                 </div>
                 
@@ -690,11 +690,14 @@ body {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
 }
 
 .category-tag:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    color: white;
 }
 
 .card-summary {
