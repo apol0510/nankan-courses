@@ -50,18 +50,19 @@ nav h1 a {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(113, 75, 247, 0.15);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(113, 75, 247, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.5px;
 }
 
 nav h1 a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(113, 75, 247, 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
     color: white;
+    border: 1px solid rgba(113, 75, 247, 0.5);
 }
 
 .nav-links {
@@ -76,20 +77,22 @@ nav h1 a:hover {
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(17, 2, 38, 0.8) 0%, rgba(27, 22, 47, 0.8) 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(113, 75, 247, 0.4);
     transition: all 0.3s ease;
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, rgba(113, 75, 247, 0.3) 0%, rgba(113, 75, 247, 0.2) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(113, 75, 247, 0.4);
     color: white;
+    border: 1px solid rgba(113, 75, 247, 0.6);
 }
 
 /* Hamburger Menu - CSS Only Implementation */
