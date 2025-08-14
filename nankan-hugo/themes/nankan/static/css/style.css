@@ -50,19 +50,21 @@ nav h1 a {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    background: rgba(113, 75, 247, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(113, 75, 247, 0.3);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 10px rgba(113, 75, 247, 0.5);
     letter-spacing: 0.5px;
 }
 
 nav h1 a:hover {
-    background: rgba(113, 75, 247, 0.25);
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    box-shadow: 0 8px 32px rgba(113, 75, 247, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
     color: white;
-    border: 1px solid rgba(113, 75, 247, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .nav-links {
@@ -77,22 +79,25 @@ nav h1 a:hover {
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
-    background: linear-gradient(135deg, rgba(17, 2, 38, 0.8) 0%, rgba(27, 22, 47, 0.8) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(113, 75, 247, 0.4);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     transition: all 0.3s ease;
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .nav-links a:hover {
-    background: linear-gradient(135deg, rgba(113, 75, 247, 0.3) 0%, rgba(113, 75, 247, 0.2) 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(113, 75, 247, 0.4);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.15) 100%);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(113, 75, 247, 0.25),
+                inset 0 2px 8px rgba(255, 255, 255, 0.1);
     color: white;
-    border: 1px solid rgba(113, 75, 247, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Hamburger Menu - CSS Only Implementation */
