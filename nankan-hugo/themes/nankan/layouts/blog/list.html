@@ -17,11 +17,6 @@
         <label for="filter-urawa" class="filter-button">浦和</label>
     </div>
     
-    <!-- 検索機能 -->
-    <div class="search-container" id="searchContainer" style="display: none;">
-        <input type="text" id="searchInput" placeholder="タグで検索..." class="search-input">
-        <button onclick="clearSearch()" class="clear-button">✕</button>
-    </div>
     
     <div class="blog-cards-grid">
         {{ range .Paginator.Pages }}
@@ -390,66 +385,6 @@ body {
     }
 }
 
-/* 検索機能のスタイル */
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    border: 1px solid rgba(113, 75, 247, 0.3);
-}
-
-.search-input {
-    padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(113, 75, 247, 0.3);
-    border-radius: 20px;
-    color: white;
-    font-size: 0.9rem;
-    width: 300px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.search-input:focus {
-    border-color: rgba(113, 75, 247, 0.6);
-    box-shadow: 0 0 10px rgba(113, 75, 247, 0.3);
-}
-
-.search-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.clear-button {
-    background: rgba(255, 75, 75, 0.8);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.clear-button:hover {
-    background: rgba(255, 75, 75, 1);
-    transform: scale(1.1);
-}
-
-.blog-card.hidden {
-    display: none !important;
-}
-
-@media (max-width: 480px) {
-    .search-input {
-        width: 250px;
-    }
-}
 </style>
 
 <script>
@@ -479,61 +414,6 @@ window.addEventListener('DOMContentLoaded', function() {
     if (hash.startsWith('#filter-')) {
         const category = decodeURIComponent(hash.replace('#filter-', ''));
         filterByCategory(category);
-    }
-    
-    // URLパラメータからsearch値を取得
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get('search');
-    if (searchQuery) {
-        showSearch();
-        document.getElementById('searchInput').value = searchQuery;
-        searchByTag(searchQuery);
-    }
-});
-
-function showSearch() {
-    document.getElementById('searchContainer').style.display = 'flex';
-    // カテゴリフィルターをリセット
-    document.getElementById('filter-all').checked = true;
-}
-
-function clearSearch() {
-    document.getElementById('searchContainer').style.display = 'none';
-    document.getElementById('searchInput').value = '';
-    // 全ての記事を表示
-    const cards = document.querySelectorAll('.blog-card');
-    cards.forEach(card => card.classList.remove('hidden'));
-    // URLからsearchパラメータを削除
-    window.history.replaceState({}, '', '/blog/');
-}
-
-function searchByTag(tag) {
-    showSearch();
-    const searchTerm = tag.toLowerCase();
-    const cards = document.querySelectorAll('.blog-card');
-    
-    cards.forEach(card => {
-        const tags = card.getAttribute('data-tags');
-        if (tags && tags.includes(searchTerm)) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-}
-
-// 検索入力のリアルタイム検索
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = this.value;
-            if (query.length > 0) {
-                searchByTag(query);
-            } else {
-                clearSearch();
-            }
-        });
     }
 });
 </script>
