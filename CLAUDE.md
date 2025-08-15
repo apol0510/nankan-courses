@@ -71,16 +71,17 @@ This is a **100% static website** built with Hugo, dedicated to explaining and a
 - プロジェクト分離: 他のプロジェクトと混在させない
 - キャッシュ管理: ブラウザキャッシュは定期的にクリアする
 
-**各プロジェクトでの調整箇所**:
-- `[プロジェクトのパス]`: 各プロジェクトの実際のパス
-- `[ポート番号]`: プロジェクトで使用するポート（例: 1313, 8000, 3000など）
-- `[サーバー起動コマンド]`: プロジェクトに応じたサーバー起動コマンド
+**このプロジェクト専用設定**:
+- **専用ポート**: 1314（他プロジェクトと競合しない）
+- **起動コマンド**: `hugo server --port 1314`
+- **プロジェクトパス**: `/Users/apolon/Desktop/WorkSpace/nankan-courese/nankan-hugo`
 
-#### 開発ワークフロー
+#### 開発ワークフロー（南関競馬サイト専用）
 1. **作業開始時**: 既存サーバープロセスをすべて停止
-2. **Hugo開発**: `hugo server` を単一プロジェクトでのみ実行
-3. **作業終了時**: `Ctrl+C` でサーバーを確実に停止
-4. **プロセス確認**: `ps aux | grep server` で残存プロセスがないか確認
+2. **Hugo開発**: `cd /Users/apolon/Desktop/WorkSpace/nankan-courese/nankan-hugo && hugo server --port 1314`
+3. **アクセスURL**: http://localhost:1314/
+4. **作業終了時**: `Ctrl+C` でサーバーを確実に停止
+5. **プロセス確認**: `ps aux | grep hugo` で残存プロセスがないか確認
 
 #### よくある問題の回避
 - **Python HTTPサーバーの放置禁止**: `python3 -m http.server` 使用後は必ず停止
