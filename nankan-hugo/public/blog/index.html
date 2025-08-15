@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ | 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</title>
@@ -11,7 +11,7 @@
     <meta name="language" content="ja">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="canonical" href="http://localhost:1313/blog/">
+    <link rel="canonical" href="http://localhost:1314/blog/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     
     
@@ -21,17 +21,17 @@
     
     
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:1313/blog/">
+    <meta property="og:url" content="http://localhost:1314/blog/">
     <meta property="og:title" content="ブログ | 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】">
     <meta property="og:description" content="南関競馬の最新情報と分析">
-    <meta property="og:image" content="http://localhost:1313/og-image.jpg">
+    <meta property="og:image" content="http://localhost:1314/og-image.jpg">
 
     
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://localhost:1313/blog/">
+    <meta property="twitter:url" content="http://localhost:1314/blog/">
     <meta property="twitter:title" content="ブログ | 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】">
     <meta property="twitter:description" content="南関競馬の最新情報と分析">
-    <meta property="twitter:image" content="http://localhost:1313/og-image.jpg">
+    <meta property="twitter:image" content="http://localhost:1314/og-image.jpg">
     
     
     
@@ -40,7 +40,7 @@
     <header id="top">
         <nav>
             <div class="container">
-                <h1><a href="http://localhost:1313/">南関競馬コース解説</a></h1>
+                <h1><a href="http://localhost:1314/">南関競馬コース解説</a></h1>
                 
                 
                 <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="メニューを開く">
@@ -75,13 +75,20 @@
     <h1 class="blog-title">ブログ</h1>
     
     
+    <input type="radio" name="category-filter" id="filter-all" class="filter-input" checked>
+    <input type="radio" name="category-filter" id="filter-ooi" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-funabashi" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-kawasaki" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-urawa" class="filter-input">
+    
     <div class="category-filters">
-        <a href="/blog/" class="filter-link active">全て</a>
-        <a href="/categories/大井/" class="filter-link">大井</a>
-        <a href="/categories/船橋/" class="filter-link">船橋</a>
-        <a href="/categories/川崎/" class="filter-link">川崎</a>
-        <a href="/categories/浦和/" class="filter-link">浦和</a>
+        <label for="filter-all" class="filter-button">全て</label>
+        <label for="filter-ooi" class="filter-button">大井</label>
+        <label for="filter-funabashi" class="filter-button">船橋</label>
+        <label for="filter-kawasaki" class="filter-button">川崎</label>
+        <label for="filter-urawa" class="filter-button">浦和</label>
     </div>
+    
     
     <div class="blog-cards-grid">
         
@@ -93,10 +100,11 @@
             
             
         
-        <article class="blog-card category-urawa">
+        
+        <article class="blog-card category-urawa" data-tags="800m 短距離 スプリント 浦和 スタート 枠順 馬番">
             <div class="card-header">
                 <h2 class="card-title">
-                    <a href="http://localhost:1313/blog/2025-01-urawa-800m/">浦和800m完全攻略｜スタートダッシュが決め手の極短距離戦を徹底解説</a>
+                    <a href="http://localhost:1314/blog/2025-01-urawa-800m/">浦和800m完全攻略｜スタートダッシュが決め手の極短距離戦を徹底解説</a>
                 </h2>
             </div>
             
@@ -110,7 +118,7 @@
                 
                 <div class="card-categories">
                     
-                    <a href="/categories/%E6%B5%A6%E5%92%8C/" class="category-tag">浦和</a>
+                    <a href="#filter-%25E6%25B5%25A6%25E5%2592%258C" class="category-tag" onclick="filterByCategory('浦和')">浦和</a>
                     
                 </div>
                 
@@ -263,7 +271,7 @@
             </div>
             
             <div class="card-footer">
-                <a href="http://localhost:1313/blog/2025-01-urawa-800m/" class="card-link">続きを読む →</a>
+                <a href="http://localhost:1314/blog/2025-01-urawa-800m/" class="card-link">続きを読む →</a>
             </div>
         </article>
         
@@ -275,10 +283,11 @@
             
             
         
-        <article class="blog-card category-ooi">
+        
+        <article class="blog-card category-ooi" data-tags="1200m 枠順 予想法">
             <div class="card-header">
                 <h2 class="card-title">
-                    <a href="http://localhost:1313/blog/2025-01-ooi-strategy/">大井競馬場1200m攻略法：内枠有利を最大限活用する方法</a>
+                    <a href="http://localhost:1314/blog/2025-01-ooi-strategy/">大井競馬場1200m攻略法：内枠有利を最大限活用する方法</a>
                 </h2>
             </div>
             
@@ -292,7 +301,7 @@
                 
                 <div class="card-categories">
                     
-                    <a href="/categories/%E5%A4%A7%E4%BA%95/" class="category-tag">大井</a>
+                    <a href="#filter-%25E5%25A4%25A7%25E4%25BA%2595" class="category-tag" onclick="filterByCategory('大井')">大井</a>
                     
                 </div>
                 
@@ -329,7 +338,7 @@
             </div>
             
             <div class="card-footer">
-                <a href="http://localhost:1313/blog/2025-01-ooi-strategy/" class="card-link">続きを読む →</a>
+                <a href="http://localhost:1314/blog/2025-01-ooi-strategy/" class="card-link">続きを読む →</a>
             </div>
         </article>
         
@@ -341,10 +350,11 @@
             
             
         
-        <article class="blog-card category-funabashi">
+        
+        <article class="blog-card category-funabashi" data-tags="1000m 直線 スプリント">
             <div class="card-header">
                 <h2 class="card-title">
-                    <a href="http://localhost:1313/blog/2025-01-funabashi-tips/">船橋競馬場の直線コース完全攻略ガイド</a>
+                    <a href="http://localhost:1314/blog/2025-01-funabashi-tips/">船橋競馬場の直線コース完全攻略ガイド</a>
                 </h2>
             </div>
             
@@ -358,7 +368,7 @@
                 
                 <div class="card-categories">
                     
-                    <a href="/categories/%E8%88%B9%E6%A9%8B/" class="category-tag">船橋</a>
+                    <a href="#filter-%25E8%2588%25B9%25E6%25A9%258B" class="category-tag" onclick="filterByCategory('船橋')">船橋</a>
                     
                 </div>
                 
@@ -416,7 +426,7 @@
             </div>
             
             <div class="card-footer">
-                <a href="http://localhost:1313/blog/2025-01-funabashi-tips/" class="card-link">続きを読む →</a>
+                <a href="http://localhost:1314/blog/2025-01-funabashi-tips/" class="card-link">続きを読む →</a>
             </div>
         </article>
         
@@ -428,10 +438,11 @@
             
             
         
-        <article class="blog-card category-kawasaki">
+        
+        <article class="blog-card category-kawasaki" data-tags="ナイター 馬場状態 照明">
             <div class="card-header">
                 <h2 class="card-title">
-                    <a href="http://localhost:1313/blog/2025-01-kawasaki-night/">川崎競馬場ナイター競走の特徴と攻略法</a>
+                    <a href="http://localhost:1314/blog/2025-01-kawasaki-night/">川崎競馬場ナイター競走の特徴と攻略法</a>
                 </h2>
             </div>
             
@@ -445,7 +456,7 @@
                 
                 <div class="card-categories">
                     
-                    <a href="/categories/%E5%B7%9D%E5%B4%8E/" class="category-tag">川崎</a>
+                    <a href="#filter-%25E5%25B7%259D%25E5%25B4%258E" class="category-tag" onclick="filterByCategory('川崎')">川崎</a>
                     
                 </div>
                 
@@ -567,7 +578,7 @@
             </div>
             
             <div class="card-footer">
-                <a href="http://localhost:1313/blog/2025-01-kawasaki-night/" class="card-link">続きを読む →</a>
+                <a href="http://localhost:1314/blog/2025-01-kawasaki-night/" class="card-link">続きを読む →</a>
             </div>
         </article>
         
@@ -799,7 +810,11 @@ body {
     flex-wrap: wrap;
 }
 
-.filter-link {
+.filter-input {
+    display: none;
+}
+
+.filter-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -810,10 +825,9 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
     font-size: 0.95rem;
-    text-decoration: none;
 }
 
-.filter-link:hover {
+.filter-button:hover {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-color: rgba(113, 75, 247, 0.6);
@@ -821,7 +835,7 @@ body {
     box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
 }
 
-.filter-link.active {
+.filter-input:checked + .filter-button {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-color: rgba(113, 75, 247, 0.8);
@@ -846,18 +860,84 @@ body {
 }
 
  
+#filter-all:checked ~ .blog-cards-grid .blog-card {
+    display: block;
+}
+
+ 
+#filter-ooi:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-ooi:checked ~ .blog-cards-grid .blog-card.category-ooi {
+    display: block;
+}
+
+#filter-funabashi:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-funabashi:checked ~ .blog-cards-grid .blog-card.category-funabashi {
+    display: block;
+}
+
+#filter-kawasaki:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-kawasaki:checked ~ .blog-cards-grid .blog-card.category-kawasaki {
+    display: block;
+}
+
+#filter-urawa:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-urawa:checked ~ .blog-cards-grid .blog-card.category-urawa {
+    display: block;
+}
+
+ 
 @media (max-width: 480px) {
     .category-filters {
         gap: 0.5rem;
         margin-bottom: 2rem;
     }
     
-    .filter-link {
+    .filter-button {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
     }
 }
+
 </style>
+
+<script>
+function filterByCategory(category) {
+    
+    const filterMap = {
+        '大井': 'filter-ooi',
+        '船橋': 'filter-funabashi', 
+        '川崎': 'filter-kawasaki',
+        '浦和': 'filter-urawa'
+    };
+    
+    const filterId = filterMap[category];
+    if (filterId) {
+        document.getElementById(filterId).checked = true;
+    }
+    
+    
+    if (!window.location.pathname.includes('/blog/')) {
+        window.location.href = '/blog/#filter-' + encodeURIComponent(category);
+    }
+}
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#filter-')) {
+        const category = decodeURIComponent(hash.replace('#filter-', ''));
+        filterByCategory(category);
+    }
+});
+</script>
 
     </main>
     

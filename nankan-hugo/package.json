@@ -1,0 +1,14 @@
+{
+  "name": "nankan-hugo",
+  "version": "1.0.0",
+  "description": "南関競馬場解説サイト",
+  "scripts": {
+    "dev": "hugo server --port 1314",
+    "build": "hugo",
+    "clean": "rm -rf public",
+    "start": "hugo server --port 1314"
+  },
+  "keywords": ["hugo", "nankan", "keiba"],
+  "author": "",
+  "license": "ISC"
+}
