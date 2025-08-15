@@ -1,7 +1,7 @@
 ---
 title: "浦和競馬場 - 小回り平坦の力勝負コース攻略法"
 description: "浦和競馬場のコース攻略法を距離別に詳しく解説。小回り平坦の力勝負コースの特性、南関最短直線の特徴、各距離の攻略ポイントを分析。"
-course_image: "images/urawacoures.png"
+course_image: "images/urawa_course.png"
 course_specs:
   回り: "左回り"
   フルゲート: "12頭"

@@ -1,7 +1,7 @@
 ---
 title: "川崎競馬場 - 南関屈指のスピードコース攻略法"
 description: "川崎競馬場のコース攻略法を距離別に詳しく解説。4角の急カーブが特徴的なスピードコースの特性、枠順有利不利、各距離の攻略ポイントを分析。"
-course_image: "images/kawasak_coures.png"
+course_image: "images/kawasaki_course.png"
 course_specs:
   回り: "左回り"
   フルゲート: "14頭"

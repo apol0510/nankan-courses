@@ -1,7 +1,7 @@
 ---
 title: "船橋競馬場 - スパイラルカーブの左回りコース攻略法"
 description: "船橋競馬場のコース攻略法を距離別に詳しく解説。スパイラルカーブが特徴的な左回りコースの特性、枠順有利不利、各距離の攻略ポイントを分析。"
-course_image: "images/funabashicoures.png"
+course_image: "images/funabashi_course.png"
 course_specs:
   回り: "左回り"
   フルゲート: "14頭"
