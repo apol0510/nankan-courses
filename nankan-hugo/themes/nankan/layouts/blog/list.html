@@ -1,0 +1,420 @@
+{{ define "main" }}
+<div class="blog-list-container">
+    <h1 class="blog-title">{{ .Title }}</h1>
+    
+    <!-- カテゴリフィルターボタン -->
+    <input type="radio" name="category-filter" id="filter-all" class="filter-input" checked>
+    <input type="radio" name="category-filter" id="filter-ooi" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-funabashi" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-kawasaki" class="filter-input">
+    <input type="radio" name="category-filter" id="filter-urawa" class="filter-input">
+    
+    <div class="category-filters">
+        <label for="filter-all" class="filter-button">全て</label>
+        <label for="filter-ooi" class="filter-button">大井</label>
+        <label for="filter-funabashi" class="filter-button">船橋</label>
+        <label for="filter-kawasaki" class="filter-button">川崎</label>
+        <label for="filter-urawa" class="filter-button">浦和</label>
+    </div>
+    
+    
+    <div class="blog-cards-grid">
+        {{ range .Paginator.Pages }}
+        {{ $categories := .Params.categories }}
+        {{ $categoryClass := "" }}
+        {{ range $categories }}
+            {{ if eq . "大井" }}{{ $categoryClass = "category-ooi" }}{{ end }}
+            {{ if eq . "船橋" }}{{ $categoryClass = "category-funabashi" }}{{ end }}
+            {{ if eq . "川崎" }}{{ $categoryClass = "category-kawasaki" }}{{ end }}
+            {{ if eq . "浦和" }}{{ $categoryClass = "category-urawa" }}{{ end }}
+        {{ end }}
+        {{ $tagsString := delimit .Params.tags " " }}
+        <article class="blog-card {{ $categoryClass }}" data-tags="{{ $tagsString | lower }}">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </div>
+            
+            <div class="card-body">
+                <div class="card-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "2006年1月2日" }}
+                    </time>
+                </div>
+                
+                {{ with .Params.categories }}
+                <div class="card-categories">
+                    {{ range . }}
+                    <a href="#filter-{{ . | urlize }}" class="category-tag" onclick="filterByCategory('{{ . }}')">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="card-summary">
+                    {{ .Summary }}
+                </div>
+            </div>
+            
+            <div class="card-footer">
+                <a href="{{ .Permalink }}" class="card-link">続きを読む →</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    
+    {{ template "_internal/pagination.html" . }}
+</div>
+
+<style>
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    min-height: 100vh;
+}
+
+.blog-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.blog-title {
+    color: white;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 20px rgba(113, 75, 247, 0.3);
+}
+
+.blog-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(113, 75, 247, 0.2);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(113, 75, 247, 0.3);
+    border: 1px solid rgba(113, 75, 247, 0.4);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.card-title a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.card-title a:hover {
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin-bottom: 0.75rem;
+}
+
+.card-meta time {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c9bdf2;
+}
+
+.card-categories {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.category-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    color: white;
+}
+
+.card-summary {
+    color: #d0d0d0;
+    line-height: 1.7;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95rem;
+}
+
+.card-footer {
+    padding: 0 1.5rem 1.5rem;
+    margin-top: auto;
+}
+
+.card-link {
+    display: inline-block;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.pagination {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.pagination a {
+    padding: 0.5rem 1rem;
+    background: #ecf0f1;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pagination a:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.05);
+}
+
+.pagination .active a {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2rem;
+    }
+    
+    .blog-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .blog-card {
+        margin: 0 auto;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-header {
+        padding: 1.25rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .blog-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* カテゴリフィルターのスタイル */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-input {
+    display: none;
+}
+
+.filter-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #c9bdf2;
+    border: 2px solid rgba(113, 75, 247, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-button:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: rgba(113, 75, 247, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+}
+
+.filter-input:checked + .filter-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: rgba(113, 75, 247, 0.8);
+    box-shadow: 0 4px 20px rgba(113, 75, 247, 0.4);
+}
+
+/* フィルター機能（CSS Only） */
+.blog-card {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* デフォルト：全て表示 */
+#filter-all:checked ~ .blog-cards-grid .blog-card {
+    display: block;
+}
+
+/* 各カテゴリのフィルター */
+#filter-ooi:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-ooi:checked ~ .blog-cards-grid .blog-card.category-ooi {
+    display: block;
+}
+
+#filter-funabashi:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-funabashi:checked ~ .blog-cards-grid .blog-card.category-funabashi {
+    display: block;
+}
+
+#filter-kawasaki:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-kawasaki:checked ~ .blog-cards-grid .blog-card.category-kawasaki {
+    display: block;
+}
+
+#filter-urawa:checked ~ .blog-cards-grid .blog-card {
+    display: none;
+}
+#filter-urawa:checked ~ .blog-cards-grid .blog-card.category-urawa {
+    display: block;
+}
+
+/* モバイル対応 */
+@media (max-width: 480px) {
+    .category-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .filter-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+</style>
+
+<script>
+function filterByCategory(category) {
+    // カテゴリに応じてラジオボタンを選択
+    const filterMap = {
+        '大井': 'filter-ooi',
+        '船橋': 'filter-funabashi', 
+        '川崎': 'filter-kawasaki',
+        '浦和': 'filter-urawa'
+    };
+    
+    const filterId = filterMap[category];
+    if (filterId) {
+        document.getElementById(filterId).checked = true;
+    }
+    
+    // ブログ一覧ページでない場合はリダイレクト
+    if (!window.location.pathname.includes('/blog/')) {
+        window.location.href = '/blog/#filter-' + encodeURIComponent(category);
+    }
+}
+
+// ページ読み込み時にURLのハッシュを確認
+window.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#filter-')) {
+        const category = decodeURIComponent(hash.replace('#filter-', ''));
+        filterByCategory(category);
+    }
+});
+</script>
+{{ end }}

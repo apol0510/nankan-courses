@@ -1,0 +1,288 @@
+{{ define "main" }}
+<div class="blog-list-container">
+    <h1 class="blog-title">タグ: {{ .Title }}</h1>
+    <p class="tag-count">{{ len .Data.Pages }}件の記事が見つかりました</p>
+    
+    <div class="blog-cards-grid">
+        {{ range .Data.Pages }}
+        {{ $categories := .Params.categories }}
+        {{ $categoryClass := "" }}
+        {{ range $categories }}
+            {{ if eq . "大井" }}{{ $categoryClass = "category-ooi" }}{{ end }}
+            {{ if eq . "船橋" }}{{ $categoryClass = "category-funabashi" }}{{ end }}
+            {{ if eq . "川崎" }}{{ $categoryClass = "category-kawasaki" }}{{ end }}
+            {{ if eq . "浦和" }}{{ $categoryClass = "category-urawa" }}{{ end }}
+        {{ end }}
+        {{ $tagsString := delimit .Params.tags " " }}
+        <article class="blog-card {{ $categoryClass }}" data-tags="{{ $tagsString | lower }}">
+            <div class="card-header">
+                <h2 class="card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </div>
+            
+            <div class="card-body">
+                <div class="card-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "2006年1月2日" }}
+                    </time>
+                </div>
+                
+                {{ with .Params.categories }}
+                <div class="card-categories">
+                    {{ range . }}
+                    <a href="/blog/#filter-{{ . | urlize }}" class="category-tag" onclick="filterByCategory('{{ . }}')">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="card-summary">
+                    {{ .Summary }}
+                </div>
+            </div>
+            
+            <div class="card-footer">
+                <a href="{{ .Permalink }}" class="card-link">続きを読む →</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    
+    <div class="back-to-tags">
+        <a href="/tags/">← 全てのタグを見る</a>
+        <a href="/blog/">← ブログ一覧に戻る</a>
+    </div>
+</div>
+
+<style>
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    min-height: 100vh;
+}
+
+.blog-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.blog-title {
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 20px rgba(113, 75, 247, 0.3);
+}
+
+.tag-count {
+    color: #a0a0a0;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(113, 75, 247, 0.3);
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.blog-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(113, 75, 247, 0.2);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(113, 75, 247, 0.3);
+    border: 1px solid rgba(113, 75, 247, 0.4);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.card-title a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.card-title a:hover {
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin-bottom: 0.75rem;
+}
+
+.card-meta time {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c9bdf2;
+}
+
+.card-categories {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.category-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
+    color: white;
+}
+
+.card-summary {
+    color: #d0d0d0;
+    line-height: 1.7;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95rem;
+}
+
+.card-footer {
+    padding: 0 1.5rem 1.5rem;
+    margin-top: auto;
+}
+
+.card-link {
+    display: inline-block;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.back-to-tags {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.back-to-tags a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-to-tags a:hover {
+    background: linear-gradient(135deg, rgba(113, 75, 247, 0.2) 0%, rgba(113, 75, 247, 0.1) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(113, 75, 247, 0.3);
+    border: 1px solid rgba(113, 75, 247, 0.3);
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2rem;
+    }
+    
+    .blog-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .blog-card {
+        margin: 0 auto;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-header {
+        padding: 1.25rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .back-to-tags {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+</style>
+
+<script>
+function filterByCategory(category) {
+    // ブログ一覧ページにリダイレクトしてカテゴリフィルターを適用
+    window.location.href = '/blog/#filter-' + encodeURIComponent(category);
+}
+</script>
+{{ end }}

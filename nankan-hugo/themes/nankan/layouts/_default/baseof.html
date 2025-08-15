@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }}">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="language" content="{{ .Site.Params.language }}">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    
+    <!-- パフォーマンス最適化 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://nankan-course.com">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta property="twitter:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+    <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="twitter:image" content="{{ .Site.BaseURL }}og-image.jpg">
+    
+    <!-- Structured Data -->
+    {{ if .IsHome }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ .Site.Title }}",
+        "url": "{{ .Site.BaseURL }}",
+        "description": "{{ .Site.Params.description }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ .Site.Params.author }}"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ .Site.BaseURL }}?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    {{ end }}
+</head>
+<body id="page-top">
+    <header id="top">
+        <nav>
+            <div class="container">
+                <h1><a href="{{ .Site.BaseURL }}">南関競馬コース解説</a></h1>
+                
+                <!-- ハンバーガーメニューボタン -->
+                <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="メニューを開く">
+                <label for="hamburger-toggle" class="hamburger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+                
+                <ul class="nav-links">
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    <!-- Scroll to Top Button - CSS Only -->
+    <a href="#page-top" class="scroll-to-top" aria-label="ページトップに戻る"></a>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav" aria-label="フッターナビゲーション">
+                <h3>サイトマップ</h3>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <h3>関連リンク</h3>
+                <ul>
+                    <li><a href="https://www.tokyocitykeiba.com/" target="_blank" rel="noopener noreferrer">東京シティ競馬（大井）</a></li>
+                    <li><a href="https://www.f-keiba.com/" target="_blank" rel="noopener noreferrer">船橋競馬場</a></li>
+                    <li><a href="https://www.kawasaki-keiba.jp/" target="_blank" rel="noopener noreferrer">川崎競馬場</a></li>
+                    <li><a href="https://www.urawa-keiba.jp/" target="_blank" rel="noopener noreferrer">浦和競馬場</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2024 {{ .Site.Params.author }}. All rights reserved.</p>
+            <p>※競馬は20歳になってから。ギャンブル等依存症でお困りの方は各都道府県の相談窓口にご相談ください。</p>
+            <p>最終更新日: 2025年7月20日</p>
+        </div>
+    </footer>
+
+</body>
+</html>
