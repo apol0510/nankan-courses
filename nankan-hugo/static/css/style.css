@@ -928,7 +928,41 @@ nav h1 a:hover {
 }
 
 #funabashi .course-data {
-    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin-bottom: 3rem !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+}
+
+#funabashi .course-data h2 {
+    color: white !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+    padding-bottom: 0.8rem !important;
+}
+
+#funabashi .course-specs {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+#funabashi .course-specs th {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+#funabashi .course-specs td {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 #funabashi .distance-item h3 {
@@ -944,7 +978,41 @@ nav h1 a:hover {
 }
 
 #kawasaki .course-data {
-    border-left-color: #f39c12;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin-bottom: 3rem !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+}
+
+#kawasaki .course-data h2 {
+    color: white !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+    padding-bottom: 0.8rem !important;
+}
+
+#kawasaki .course-specs {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+#kawasaki .course-specs th {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+#kawasaki .course-specs td {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 #kawasaki .distance-item h3 {
@@ -1052,7 +1120,41 @@ article.course-section h1 {
 }
 
 #urawa .course-data {
-    border-left-color: #2ecc71;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin-bottom: 3rem !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+}
+
+#urawa .course-data h2 {
+    color: white !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+    padding-bottom: 0.8rem !important;
+}
+
+#urawa .course-specs {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+#urawa .course-specs th {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+#urawa .course-specs td {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 #urawa .distance-item h3 {
