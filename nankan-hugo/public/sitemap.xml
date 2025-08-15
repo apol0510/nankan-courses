@@ -162,10 +162,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1314/tags/%E4%B8%AD%E8%B7%9D%E9%9B%A2/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>http://localhost:1314/ooi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

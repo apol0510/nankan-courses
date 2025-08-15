@@ -1,1 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</title><link>https://nankan-course.keiba.link/categories/</link><description>Recent content in Categories on 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 15 Aug 2025 16:00:00 +0900</lastBuildDate><atom:link href="https://nankan-course.keiba.link/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>浦和</title><link>https://nankan-course.keiba.link/categories/%E6%B5%A6%E5%92%8C/</link><pubDate>Fri, 15 Aug 2025 16:00:00 +0900</pubDate><guid>https://nankan-course.keiba.link/categories/%E6%B5%A6%E5%92%8C/</guid><description/></item><item><title>浦和競馬場</title><link>https://nankan-course.keiba.link/categories/%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4/</link><pubDate>Fri, 15 Aug 2025 16:00:00 +0900</pubDate><guid>https://nankan-course.keiba.link/categories/%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4/</guid><description/></item><item><title>大井</title><link>https://nankan-course.keiba.link/categories/%E5%A4%A7%E4%BA%95/</link><pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate><guid>https://nankan-course.keiba.link/categories/%E5%A4%A7%E4%BA%95/</guid><description/></item><item><title>船橋</title><link>https://nankan-course.keiba.link/categories/%E8%88%B9%E6%A9%8B/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>https://nankan-course.keiba.link/categories/%E8%88%B9%E6%A9%8B/</guid><description/></item><item><title>川崎</title><link>https://nankan-course.keiba.link/categories/%E5%B7%9D%E5%B4%8E/</link><pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate><guid>https://nankan-course.keiba.link/categories/%E5%B7%9D%E5%B4%8E/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</title>
+    <link>http://localhost:1314/categories/</link>
+    <description>Recent content in Categories on 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 15 Aug 2025 16:00:00 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1314/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浦和</title>
+      <link>http://localhost:1314/categories/%E6%B5%A6%E5%92%8C/</link>
+      <pubDate>Fri, 15 Aug 2025 16:00:00 +0900</pubDate>
+      <guid>http://localhost:1314/categories/%E6%B5%A6%E5%92%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>浦和競馬場</title>
+      <link>http://localhost:1314/categories/%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4/</link>
+      <pubDate>Fri, 15 Aug 2025 16:00:00 +0900</pubDate>
+      <guid>http://localhost:1314/categories/%E6%B5%A6%E5%92%8C%E7%AB%B6%E9%A6%AC%E5%A0%B4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>大井</title>
+      <link>http://localhost:1314/categories/%E5%A4%A7%E4%BA%95/</link>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/categories/%E5%A4%A7%E4%BA%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>船橋</title>
+      <link>http://localhost:1314/categories/%E8%88%B9%E6%A9%8B/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/categories/%E8%88%B9%E6%A9%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>川崎</title>
+      <link>http://localhost:1314/categories/%E5%B7%9D%E5%B4%8E/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/categories/%E5%B7%9D%E5%B4%8E/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
