@@ -960,11 +960,87 @@ nav h1 a:hover {
 }
 
 #ooi .course-data {
-    border-left-color: #9b59b6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin-bottom: 3rem !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+}
+
+#ooi .course-data h2 {
+    color: white !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+    padding-bottom: 0.8rem !important;
+}
+
+#ooi .course-specs {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 1rem !important;
+}
+
+#ooi .course-specs th,
+#ooi .course-specs td {
+    padding: 12px 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+#ooi .course-specs th {
+    background: rgba(255, 255, 255, 0.2) !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+}
+
+#ooi .course-specs tr:hover td,
+#ooi .course-specs tr:hover th {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(1.01) !important;
+    transition: all 0.2s ease !important;
 }
 
 #ooi .distance-item h3 {
     border-bottom-color: #9b59b6;
+}
+
+/* Ooi main title styling */
+#ooi h1,
+#ooi .course-section h1,
+article.course-section h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 2rem 2.5rem !important;
+    border-radius: 15px !important;
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#ooi .course-section h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+#ooi .course-section h1:hover::before {
+    left: 100%;
 }
 
 #urawa {

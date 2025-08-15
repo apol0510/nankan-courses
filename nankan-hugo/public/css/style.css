@@ -960,11 +960,87 @@ nav h1 a:hover {
 }
 
 #ooi .course-data {
-    border-left-color: #9b59b6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin-bottom: 3rem !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+}
+
+#ooi .course-data h2 {
+    color: white !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+    padding-bottom: 0.8rem !important;
+}
+
+#ooi .course-specs {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 1rem !important;
+}
+
+#ooi .course-specs th,
+#ooi .course-specs td {
+    padding: 12px 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+#ooi .course-specs th {
+    background: rgba(255, 255, 255, 0.2) !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+}
+
+#ooi .course-specs tr:hover td,
+#ooi .course-specs tr:hover th {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(1.01) !important;
+    transition: all 0.2s ease !important;
 }
 
 #ooi .distance-item h3 {
     border-bottom-color: #9b59b6;
+}
+
+/* Ooi main title styling */
+#ooi h1,
+#ooi .course-section h1,
+article.course-section h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 2rem 2.5rem !important;
+    border-radius: 15px !important;
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#ooi .course-section h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+#ooi .course-section h1:hover::before {
+    left: 100%;
 }
 
 #urawa {
@@ -981,6 +1057,1065 @@ nav h1 a:hover {
 
 #urawa .distance-item h3 {
     border-bottom-color: #2ecc71;
+}
+
+/* Special styling for Urawa 800m section */
+.distance-item.urawa-800m {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-800m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-800m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-800m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.35);
+}
+
+/* Urawa 1300m section */
+.distance-item.urawa-1300m {
+    background: linear-gradient(135deg, #c27df0 0%, #9f4de6 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(194, 125, 240, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-1300m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-1300m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-1300m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(194, 125, 240, 0.35);
+}
+
+/* Urawa 1400m section */
+.distance-item.urawa-1400m {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-1400m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-1400m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-1400m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.35);
+}
+
+/* Urawa 1500m section */
+.distance-item.urawa-1500m {
+    background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-1500m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-1500m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-1500m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 152, 0, 0.35);
+}
+
+/* Urawa 1600m section */
+.distance-item.urawa-1600m {
+    background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-1600m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-1600m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-1600m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(233, 30, 99, 0.35);
+}
+
+/* Urawa 1900m section */
+.distance-item.urawa-1900m {
+    background: linear-gradient(135deg, #795548 0%, #5D4037 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(121, 85, 72, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-1900m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-1900m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-1900m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(121, 85, 72, 0.35);
+}
+
+/* Urawa 2000m section */
+.distance-item.urawa-2000m {
+    background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(96, 125, 139, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.urawa-2000m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.urawa-2000m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.urawa-2000m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(96, 125, 139, 0.35);
+}
+
+/* Kawasaki distance sections */
+/* Kawasaki 900m section */
+.distance-item.kawasaki-900m {
+    background: linear-gradient(135deg, #FF6B6B 0%, #EE5A24 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.kawasaki-900m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.kawasaki-900m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.kawasaki-900m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.35);
+}
+
+/* Kawasaki 1400m section */
+.distance-item.kawasaki-1400m {
+    background: linear-gradient(135deg, #48CAE4 0%, #0077B6 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(72, 202, 228, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.kawasaki-1400m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.kawasaki-1400m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.kawasaki-1400m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(72, 202, 228, 0.35);
+}
+
+/* Kawasaki 1500m section */
+.distance-item.kawasaki-1500m {
+    background: linear-gradient(135deg, #A8E6CF 0%, #56C596 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(168, 230, 207, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.kawasaki-1500m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.kawasaki-1500m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.kawasaki-1500m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(168, 230, 207, 0.35);
+}
+
+/* Kawasaki 1600m section */
+.distance-item.kawasaki-1600m {
+    background: linear-gradient(135deg, #FFD93D 0%, #FFC107 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(255, 217, 61, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.kawasaki-1600m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.kawasaki-1600m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.kawasaki-1600m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 217, 61, 0.35);
+}
+
+/* Kawasaki 2000m section */
+.distance-item.kawasaki-2000m {
+    background: linear-gradient(135deg, #B19CD9 0%, #8B5CF6 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(177, 156, 217, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.kawasaki-2000m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.kawasaki-2000m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.kawasaki-2000m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(177, 156, 217, 0.35);
+}
+
+/* Kawasaki 2100m section */
+.distance-item.kawasaki-2100m {
+    background: linear-gradient(135deg, #6C5CE7 0%, #5A4FCF 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.kawasaki-2100m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.kawasaki-2100m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.kawasaki-2100m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(108, 92, 231, 0.35);
+}
+
+/* Funabashi distance sections */
+/* Funabashi 1000m section */
+.distance-item.funabashi-1000m {
+    background: linear-gradient(135deg, #FD79A8 0%, #E84393 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(253, 121, 168, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-1000m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-1000m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-1000m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(253, 121, 168, 0.35);
+}
+
+/* Funabashi 1200m section */
+.distance-item.funabashi-1200m {
+    background: linear-gradient(135deg, #74B9FF 0%, #0984E3 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(116, 185, 255, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-1200m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-1200m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-1200m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(116, 185, 255, 0.35);
+}
+
+/* Funabashi 1500m section */
+.distance-item.funabashi-1500m {
+    background: linear-gradient(135deg, #00CEC9 0%, #00B894 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 206, 201, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-1500m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-1500m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-1500m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 206, 201, 0.35);
+}
+
+/* Funabashi 1600m section */
+.distance-item.funabashi-1600m {
+    background: linear-gradient(135deg, #FDB462 0%, #F39C12 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(253, 180, 98, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-1600m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-1600m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-1600m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(253, 180, 98, 0.35);
+}
+
+/* Funabashi 1700m section */
+.distance-item.funabashi-1700m {
+    background: linear-gradient(135deg, #A29BFE 0%, #6C5CE7 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(162, 155, 254, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-1700m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-1700m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-1700m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(162, 155, 254, 0.35);
+}
+
+/* Funabashi 1800m section */
+.distance-item.funabashi-1800m {
+    background: linear-gradient(135deg, #81ECEC 0%, #00CEC9 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(129, 236, 236, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-1800m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-1800m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-1800m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(129, 236, 236, 0.35);
+}
+
+/* Funabashi 2200m section */
+.distance-item.funabashi-2200m {
+    background: linear-gradient(135deg, #FDCB6E 0%, #E17055 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(253, 203, 110, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-2200m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-2200m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-2200m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(253, 203, 110, 0.35);
+}
+
+/* Funabashi 2400m section */
+.distance-item.funabashi-2400m {
+    background: linear-gradient(135deg, #636E72 0%, #2D3436 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(99, 110, 114, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.funabashi-2400m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.funabashi-2400m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.funabashi-2400m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(99, 110, 114, 0.35);
+}
+
+/* Ooi distance sections */
+/* Ooi 1000m section */
+.distance-item.ooi-1000m {
+    background: linear-gradient(135deg, #FF7675 0%, #D63031 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(255, 118, 117, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1000m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1000m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1000m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 118, 117, 0.35);
+}
+
+/* Ooi 1200m section */
+.distance-item.ooi-1200m {
+    background: linear-gradient(135deg, #00B894 0%, #00A085 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 184, 148, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1200m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1200m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1200m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 184, 148, 0.35);
+}
+
+/* Ooi 1400m section */
+.distance-item.ooi-1400m {
+    background: linear-gradient(135deg, #0984E3 0%, #0668C1 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(9, 132, 227, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1400m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1400m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1400m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(9, 132, 227, 0.35);
+}
+
+/* Ooi 1500m section */
+.distance-item.ooi-1500m {
+    background: linear-gradient(135deg, #E17055 0%, #D63031 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(225, 112, 85, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1500m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1500m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1500m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(225, 112, 85, 0.35);
+}
+
+/* Ooi 1600m section */
+.distance-item.ooi-1600m {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1600m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1600m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1600m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.35);
+}
+
+/* Ooi 1650m section */
+.distance-item.ooi-1650m {
+    background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(243, 156, 18, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1650m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1650m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1650m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(243, 156, 18, 0.35);
+}
+
+/* Ooi 1700m section */
+.distance-item.ooi-1700m {
+    background: linear-gradient(135deg, #F1C40F 0%, #F39C12 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(241, 196, 15, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1700m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1700m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1700m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(241, 196, 15, 0.35);
+}
+
+/* Ooi 1800m section */
+.distance-item.ooi-1800m {
+    background: linear-gradient(135deg, #1DD1A1 0%, #10AC84 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(29, 209, 161, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-1800m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-1800m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-1800m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(29, 209, 161, 0.35);
+}
+
+/* Ooi 2000m section */
+.distance-item.ooi-2000m {
+    background: linear-gradient(135deg, #5F27CD 0%, #4834D4 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(95, 39, 205, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-2000m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-2000m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-2000m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(95, 39, 205, 0.35);
+}
+
+/* Ooi 2400m section */
+.distance-item.ooi-2400m {
+    background: linear-gradient(135deg, #FF3838 0%, #FF2D92 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(255, 56, 56, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-2400m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-2400m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-2400m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(255, 56, 56, 0.35);
+}
+
+/* Ooi 2600m section */
+.distance-item.ooi-2600m {
+    background: linear-gradient(135deg, #2C2C54 0%, #1A1A2E 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(44, 44, 84, 0.25);
+    border: none;
+    transform: scale(1.02);
+}
+
+.distance-item.ooi-2600m h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+}
+
+.distance-item.ooi-2600m p {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.distance-item.ooi-2600m:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 15px 40px rgba(44, 44, 84, 0.35);
 }
 
 /* Footer */
