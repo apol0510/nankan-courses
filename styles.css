@@ -612,16 +612,20 @@ nav h1 a:hover {
 .section-nav {
     margin-top: 3rem;
     padding: 2rem;
-    background: #f8f9fa;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .section-nav h3 {
     font-size: 1.4rem;
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-shadow: 0 2px 10px rgba(113, 75, 247, 0.5);
 }
 
 .section-nav ul {
@@ -639,20 +643,22 @@ nav h1 a:hover {
 
 .section-nav a {
     display: block;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section-nav a:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-    background: linear-gradient(135deg, #2980b9 0%, #27ae60 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Section Detail Link */
