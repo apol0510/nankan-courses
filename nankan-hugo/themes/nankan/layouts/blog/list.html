@@ -2,19 +2,38 @@
 <div class="blog-list-container">
     <h1 class="blog-title">{{ .Title }}</h1>
     
-    <!-- カテゴリフィルターボタン -->
-    <input type="radio" name="category-filter" id="filter-all" class="filter-input" checked>
-    <input type="radio" name="category-filter" id="filter-ooi" class="filter-input">
-    <input type="radio" name="category-filter" id="filter-funabashi" class="filter-input">
-    <input type="radio" name="category-filter" id="filter-kawasaki" class="filter-input">
-    <input type="radio" name="category-filter" id="filter-urawa" class="filter-input">
-    
-    <div class="category-filters">
-        <label for="filter-all" class="filter-button">全て</label>
-        <label for="filter-ooi" class="filter-button">大井</label>
-        <label for="filter-funabashi" class="filter-button">船橋</label>
-        <label for="filter-kawasaki" class="filter-button">川崎</label>
-        <label for="filter-urawa" class="filter-button">浦和</label>
+    <!-- 競馬場カテゴリカード -->
+    <div class="category-cards">
+        <div class="category-card active">
+            <div class="category-icon">🏇</div>
+            <h3>全ての記事</h3>
+            <p>全競馬場の攻略法</p>
+            <span class="category-badge">{{ len .Site.RegularPages }} 記事</span>
+        </div>
+        <a href="/ooi/" class="category-card">
+            <div class="category-icon">🌆</div>
+            <h3>大井競馬場</h3>
+            <p>東京のナイター競馬</p>
+            <span class="category-badge">{{ len (where .Site.RegularPages "Params.categories" "intersect" (slice "大井")) }} 記事</span>
+        </a>
+        <a href="/funabashi/" class="category-card">
+            <div class="category-icon">⚓</div>
+            <h3>船橋競馬場</h3>
+            <p>千葉の地方競馬</p>
+            <span class="category-badge">{{ len (where .Site.RegularPages "Params.categories" "intersect" (slice "船橋")) }} 記事</span>
+        </a>
+        <a href="/kawasaki/" class="category-card">
+            <div class="category-icon">🌃</div>
+            <h3>川崎競馬場</h3>
+            <p>神奈川のナイター競馬</p>
+            <span class="category-badge">{{ len (where .Site.RegularPages "Params.categories" "intersect" (slice "川崎")) }} 記事</span>
+        </a>
+        <a href="/urawa/" class="category-card">
+            <div class="category-icon">🌸</div>
+            <h3>浦和競馬場</h3>
+            <p>埼玉の地方競馬</p>
+            <span class="category-badge">{{ len (where .Site.RegularPages "Params.categories" "intersect" (slice "浦和")) }} 記事</span>
+        </a>
     </div>
     
     
@@ -280,50 +299,90 @@ body {
     }
 }
 
-/* カテゴリフィルターのスタイル */
-.category-filters {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+/* カテゴリカードのスタイル */
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin-bottom: 3rem;
-    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.filter-input {
-    display: none;
-}
-
-.filter-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
+.category-card {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #c9bdf2;
-    border: 2px solid rgba(113, 75, 247, 0.3);
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
+    border: 2px solid rgba(113, 75, 247, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
     transition: all 0.3s ease;
-    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
 }
 
-.filter-button:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(113, 75, 247, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(113, 75, 247, 0.3);
     border-color: rgba(113, 75, 247, 0.6);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(113, 75, 247, 0.3);
 }
 
-.filter-input:checked + .filter-button {
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.category-card h3 {
+    color: white;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.category-card p {
+    color: #c9bdf2;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.category-badge {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    border-color: rgba(113, 75, 247, 0.8);
-    box-shadow: 0 4px 20px rgba(113, 75, 247, 0.4);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
 }
 
-/* フィルター機能（CSS Only） */
+.category-card.active {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(113, 75, 247, 0.4);
+    border-color: rgba(113, 75, 247, 0.8);
+}
+
+/* アニメーション */
 .blog-card {
-    display: block;
     animation: fadeIn 0.5s ease;
 }
 
@@ -338,83 +397,28 @@ body {
     }
 }
 
-/* デフォルト：全て表示 */
-#filter-all:checked ~ .blog-cards-grid .blog-card {
-    display: block;
-}
-
-/* 各カテゴリのフィルター */
-#filter-ooi:checked ~ .blog-cards-grid .blog-card {
-    display: none;
-}
-#filter-ooi:checked ~ .blog-cards-grid .blog-card.category-ooi {
-    display: block;
-}
-
-#filter-funabashi:checked ~ .blog-cards-grid .blog-card {
-    display: none;
-}
-#filter-funabashi:checked ~ .blog-cards-grid .blog-card.category-funabashi {
-    display: block;
-}
-
-#filter-kawasaki:checked ~ .blog-cards-grid .blog-card {
-    display: none;
-}
-#filter-kawasaki:checked ~ .blog-cards-grid .blog-card.category-kawasaki {
-    display: block;
-}
-
-#filter-urawa:checked ~ .blog-cards-grid .blog-card {
-    display: none;
-}
-#filter-urawa:checked ~ .blog-cards-grid .blog-card.category-urawa {
-    display: block;
-}
-
 /* モバイル対応 */
 @media (max-width: 480px) {
-    .category-filters {
-        gap: 0.5rem;
+    .category-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
         margin-bottom: 2rem;
     }
     
-    .filter-button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
+    .category-card {
+        padding: 1.25rem;
+    }
+    
+    .category-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 </style>
-
-<script>
-function filterByCategory(category) {
-    // カテゴリに応じてラジオボタンを選択
-    const filterMap = {
-        '大井': 'filter-ooi',
-        '船橋': 'filter-funabashi', 
-        '川崎': 'filter-kawasaki',
-        '浦和': 'filter-urawa'
-    };
-    
-    const filterId = filterMap[category];
-    if (filterId) {
-        document.getElementById(filterId).checked = true;
-    }
-    
-    // ブログ一覧ページでない場合はリダイレクト
-    if (!window.location.pathname.includes('/blog/')) {
-        window.location.href = '/blog/#filter-' + encodeURIComponent(category);
-    }
-}
-
-// ページ読み込み時にURLのハッシュを確認
-window.addEventListener('DOMContentLoaded', function() {
-    const hash = window.location.hash;
-    if (hash.startsWith('#filter-')) {
-        const category = decodeURIComponent(hash.replace('#filter-', ''));
-        filterByCategory(category);
-    }
-});
-</script>
 {{ end }}
