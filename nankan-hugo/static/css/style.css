@@ -2888,3 +2888,160 @@ html {
         margin-left: 0 !important;
     }
 }
+
+/* =================
+   CTA BUTTON STYLES 
+   ================= */
+
+/* 距離別記事への詳細攻略ガイドリンクボタン */
+.distance-cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6366 0%, #fe9158 100%);
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    margin: 15px 0 5px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(255, 99, 102, 0.4);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.distance-cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.distance-cta-button:hover::before {
+    left: 100%;
+}
+
+.distance-cta-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 99, 102, 0.6);
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.distance-cta-button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 4px 12px rgba(255, 99, 102, 0.4);
+}
+
+.distance-cta-button:focus {
+    outline: 3px solid rgba(255, 99, 102, 0.3);
+    outline-offset: 2px;
+}
+
+/* カードスタイル強化 */
+.distance-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.distance-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6366 0%, #fe9158 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.distance-item:hover::before {
+    transform: scaleY(1);
+}
+
+/* アイコン付きリンクスタイル */
+.distance-icon-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 99, 102, 0.08) 0%, rgba(254, 145, 88, 0.08) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 99, 102, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.distance-icon-link:hover {
+    background: linear-gradient(135deg, rgba(255, 99, 102, 0.12) 0%, rgba(254, 145, 88, 0.12) 100%);
+    border-color: rgba(255, 99, 102, 0.25);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(255, 99, 102, 0.1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.distance-badge {
+    background: linear-gradient(135deg, #ff6366 0%, #fe9158 100%);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(255, 99, 102, 0.3);
+}
+
+.distance-link-content {
+    flex: 1;
+}
+
+.distance-link-title {
+    font-weight: bold;
+    color: #ff6366;
+    margin-bottom: 4px;
+}
+
+.distance-link-arrow {
+    color: #ff6366;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.distance-icon-link:hover .distance-link-arrow {
+    transform: translateX(3px);
+}
+
+/* モバイルレスポンシブ対応 */
+@media (max-width: 768px) {
+    .distance-cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+    
+    .distance-icon-link {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .distance-badge {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        min-width: 50px;
+    }
+}
