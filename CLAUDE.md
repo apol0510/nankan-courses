@@ -113,6 +113,27 @@ lsof -i :8000  # Python HTTPサーバー
 - Hugo automatically generates HTML from Markdown content using templates
 - RTF files in `static/` contain additional course documentation in Japanese
 
+### コース解説記事の作成ガイドライン
+
+**記事テンプレート**: 新しいコース解説記事を作成する際は、必ず `2025-08-16-urawa-800m.md` をテンプレートとして使用すること。
+
+**テンプレートファイル位置**: `/Users/apolon/Desktop/WorkSpace/nankan-course/nankan-hugo/content/blog/2025-08-16-urawa-800m.md`
+
+**テンプレートの特徴**:
+- オレンジグラデーション背景のまとめセクション（#ff6366 → #fe9158）
+- 番号付きの白背景ボックスで3つの重要ポイントを表示
+- メール登録フォーム付きの統一されたCTAセクション
+- 記事末尾の免責事項とデータソース記載
+
+**記事作成時の手順**:
+1. 浦和800m記事（2025-08-16-urawa-800m.md）をベースファイルとしてコピー
+2. タイトル、日付、カテゴリ、タグを新しいコースに合わせて更新
+3. コース固有のデータ（枠順分析、人気別データ等）に置き換え
+4. まとめセクションの3つのポイントをコース特徴に合わせて調整
+5. デザインスタイル（グラデーション、ボックス、フォーム）は維持する
+
+**重要**: 全ての新規コース解説記事は、この浦和800mテンプレートと同一のデザインパターンを使用し、サイト全体のビジュアル統一性を保つこと。
+
 **Build Process:**
 - Run `hugo build` to generate the static site in the `public/` directory
 - Deploy the `public/` directory to any static hosting service
