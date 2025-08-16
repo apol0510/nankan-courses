@@ -1,0 +1,40 @@
+# Hugo generated files
+public/
+resources/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.log
+
+# Node modules (if using npm/yarn)
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Build artifacts
+dist/
+build/
+
+# Hugo lock file
+.hugo_build.lock
