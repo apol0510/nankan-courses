@@ -2,10 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>川崎競馬場 - 南関屈指のスピードコース攻略法 on 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</title>
-    <link>http://localhost:1314/kawasaki/</link>
+    <link>https://nankan-course.keiba.link/kawasaki/</link>
     <description>Recent content in 川崎競馬場 - 南関屈指のスピードコース攻略法 on 南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="http://localhost:1314/kawasaki/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nankan-course.keiba.link/kawasaki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>川崎競馬場 - 南関屈指のスピードコース攻略法</title>
+      <link>https://nankan-course.keiba.link/kawasaki/_index-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://nankan-course.keiba.link/kawasaki/_index-2/</guid>
+      <description>&lt;p&gt;川崎競馬場は南関屈指のスピードコースとして知られ、4角の急カーブが特徴的です。1周1,200mのコンパクトなコースで、ハイペースの競馬が展開されやすい特性があります。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
