@@ -263,11 +263,15 @@
             }
 
             const lines = input.split('\n').filter(line => line.trim());
-            const raceTitle = lines[0];
+
+            // 最初の行が数字で始まる場合はレースタイトルなし
+            const firstLineIsHorse = /^\d+[\s\t]/.test(lines[0]);
+            const raceTitle = firstLineIsHorse ? '' : lines[0];
+            const startIndex = firstLineIsHorse ? 0 : 1;
             let horses = [];
 
             // 馬データの解析
-            for (let i = 1; i < lines.length; i++) {
+            for (let i = startIndex; i < lines.length; i++) {
                 const line = lines[i].trim();
                 // タブまたはスペース区切りに対応
                 const match = line.match(/^(\d+)[\s\t]+(.*)$/);
@@ -314,7 +318,7 @@
             horses.sort((a, b) => b.totalPoints - a.totalPoints);
 
             // 結果生成
-            let output = raceTitle + '\n';
+            let output = raceTitle ? raceTitle + '\n' : '';
 
             // ポイント順位で記号を割り当て
             const classified = horses.map((h, index) => {
