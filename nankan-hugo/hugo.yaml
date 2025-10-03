@@ -42,3 +42,5 @@ sitemap:
   changefreq: 'monthly'
   priority: 0.5
   filename: 'sitemap.xml'
+
+# 更新日: 2025-10-03 - horse-prediction-converter最適化完了
