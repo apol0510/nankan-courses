@@ -287,7 +287,10 @@
                     const name = parts[parts.length - 1];
 
                     // それ以外を記号として結合
-                    const symbols = parts.slice(0, -1).join('');
+                    let symbols = parts.slice(0, -1).join('');
+
+                    // 「穴」を「△」に変換
+                    symbols = symbols.replace(/穴/g, '△');
 
                     // 記号をカウント
                     const counts = {
