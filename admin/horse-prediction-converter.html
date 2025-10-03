@@ -175,11 +175,6 @@
             background: #dd6b20;
         }
 
-        .clear-btn {
-            flex: none;
-            width: auto;
-        }
-
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.5rem;
@@ -210,9 +205,10 @@
             <div class="info-box">
                 <h3>📋 使い方</h3>
                 <ul>
-                    <li>テキストエリアにレースデータを貼り付け</li>
-                    <li>「変換実行」ボタンをクリック</li>
-                    <li>整理された予想と買い目が自動生成されます</li>
+                    <li>左側のテキストエリアにレースデータを貼り付け</li>
+                    <li>「変換」ボタンをクリック</li>
+                    <li>右側に整理された予想と買い目が自動生成されます</li>
+                    <li>「サンプルデータを読み込む」で例を確認できます</li>
                 </ul>
             </div>
 
@@ -227,6 +223,7 @@
 4 ▲◎▲▲○ リアライズタキオン
 ..."></textarea>
                 <div class="button-group">
+                    <button class="sample-btn" onclick="loadSampleData()">サンプルデータを読み込む</button>
                     <button class="clear-btn" onclick="clearInput()">クリア</button>
                 </div>
             </div>
@@ -248,6 +245,28 @@
     </div>
 
     <script>
+        // サンプルデータ
+        function loadSampleData() {
+            const sampleData = `東京1R
+1 △ ソークール
+2 △ スピネルテソーロ
+3 ニャンキニーズ
+4 ▲◎▲▲○ リアライズタキオン
+5 △ ウルヴァリン
+6 △△△△ ゴットタレント
+7 △ カシノユメミヅキ
+8 パワポケウォーズ
+9 レーヴドクロンヌ
+10 ○▲◎△▲ ラストシャイニー
+11 ミラクルカイザー
+12 △△ センジュキヨマル
+13 ▲▲○△ テンカムテキ
+14 ◎○○▲◎ イナズマダイモン
+15 △△ サンクスアミリオン
+16 ▲△◎▲ ディアファニス`;
+            document.getElementById('inputData').value = sampleData;
+        }
+
         // 入力クリア
         function clearInput() {
             document.getElementById('inputData').value = '';

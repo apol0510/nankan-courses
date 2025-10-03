@@ -28,6 +28,8 @@ This is a **100% static website** built with Hugo, dedicated to explaining and a
   - Course specifications (direction, gate capacity, distances, straight lengths)
   - Distance-specific race analysis and strategy explanations
   - Course-specific color theming
+- CTA sections link to: https://nankan-analytics.keiba.link/free-signup/
+- No email collection forms (privacy-focused approach)
 
 **Technical Features:**
 - **Mobile-First Responsive Design**: Primary optimization for mobile devices with progressive enhancement for desktop
@@ -74,11 +76,11 @@ This is a **100% static website** built with Hugo, dedicated to explaining and a
 **このプロジェクト専用設定**:
 - **専用ポート**: 1314（他プロジェクトと競合しない）
 - **起動コマンド**: `hugo server --port 1314`
-- **プロジェクトパス**: `/Users/apolon/Desktop/WorkSpace/nankan-courese/nankan-hugo`
+- **プロジェクトパス**: `/Users/apolon/Library/Mobile Documents/com~apple~CloudDocs/WorkSpace/nankan-course/nankan-hugo`
 
 #### 開発ワークフロー（南関競馬サイト専用）
 1. **作業開始時**: 既存サーバープロセスをすべて停止
-2. **Hugo開発**: `cd /Users/apolon/Desktop/WorkSpace/nankan-courese/nankan-hugo && hugo server --port 1314`
+2. **Hugo開発**: `cd /Users/apolon/Library/Mobile\ Documents/com~apple~CloudDocs/WorkSpace/nankan-course/nankan-hugo && hugo server --port 1314`
 3. **アクセスURL**: http://localhost:1314/
 4. **作業終了時**: `Ctrl+C` でサーバーを確実に停止
 5. **プロセス確認**: `ps aux | grep hugo` で残存プロセスがないか確認
@@ -117,12 +119,12 @@ lsof -i :8000  # Python HTTPサーバー
 
 **記事テンプレート**: 新しいコース解説記事を作成する際は、必ず `2025-08-16-urawa-800m.md` をテンプレートとして使用すること。
 
-**テンプレートファイル位置**: `/Users/apolon/Desktop/WorkSpace/nankan-course/nankan-hugo/content/blog/2025-08-16-urawa-800m.md`
+**テンプレートファイル位置**: `/Users/apolon/Library/Mobile Documents/com~apple~CloudDocs/WorkSpace/nankan-course/nankan-hugo/content/blog/2025-08-16-urawa-800m.md`
 
 **テンプレートの特徴**:
 - オレンジグラデーション背景のまとめセクション（#ff6366 → #fe9158）
 - 番号付きの白背景ボックスで3つの重要ポイントを表示
-- メール登録フォーム付きの統一されたCTAセクション
+- CTAセクション：サイト内リンク（https://nankan-analytics.keiba.link/free-signup/）への誘導ボタン
 - 記事末尾の免責事項とデータソース記載
 
 **記事作成時の手順**:
@@ -130,7 +132,7 @@ lsof -i :8000  # Python HTTPサーバー
 2. タイトル、日付、カテゴリ、タグを新しいコースに合わせて更新
 3. コース固有のデータ（枠順分析、人気別データ等）に置き換え
 4. まとめセクションの3つのポイントをコース特徴に合わせて調整
-5. デザインスタイル（グラデーション、ボックス、フォーム）は維持する
+5. デザインスタイル（グラデーション、ボックス、CTAリンク）は維持する
 
 **重要**: 全ての新規コース解説記事は、この浦和800mテンプレートと同一のデザインパターンを使用し、サイト全体のビジュアル統一性を保つこと。
 
