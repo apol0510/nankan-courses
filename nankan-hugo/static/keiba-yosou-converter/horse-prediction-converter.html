@@ -269,16 +269,20 @@
             // 馬データの解析
             for (let i = 1; i < lines.length; i++) {
                 const line = lines[i].trim();
-                // 番号 + 記号（任意） + 馬名のパターン
-                const match = line.match(/^(\d+)\s+(.*)$/);
+                // タブまたはスペース区切りに対応
+                const match = line.match(/^(\d+)[\s\t]+(.*)$/);
 
                 if (match) {
                     const number = match[1];
                     const rest = match[2].trim();
 
-                    // 記号と馬名を分離（最後の単語を馬名とする）
-                    const parts = rest.split(/\s+/);
+                    // タブまたは連続スペースで分割
+                    const parts = rest.split(/[\s\t]+/).filter(p => p);
+
+                    // 最後の要素を馬名とする
                     const name = parts[parts.length - 1];
+
+                    // それ以外を記号として結合
                     const symbols = parts.slice(0, -1).join('');
 
                     // 記号をカウント
