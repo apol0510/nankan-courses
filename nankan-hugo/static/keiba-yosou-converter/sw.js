@@ -1,4 +1,4 @@
-const CACHE_NAME = 'keiba-converter-v2';
+const CACHE_NAME = 'keiba-converter-v3';
 const urlsToCache = [
   './horse-prediction-converter.html',
   './manifest.json'

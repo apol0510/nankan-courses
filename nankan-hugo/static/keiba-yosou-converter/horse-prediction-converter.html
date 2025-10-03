@@ -288,12 +288,17 @@
             // 馬データの解析
             for (let i = 1; i < lines.length; i++) {
                 const line = lines[i].trim();
-                const match = line.match(/^(\d+)\s+(.*?)\s+(.+)$/);
+                // 番号 + 記号（任意） + 馬名のパターン
+                const match = line.match(/^(\d+)\s+(.*)$/);
 
                 if (match) {
                     const number = match[1];
-                    const symbols = match[2];
-                    const name = match[3];
+                    const rest = match[2].trim();
+
+                    // 記号と馬名を分離（最後の単語を馬名とする）
+                    const parts = rest.split(/\s+/);
+                    const name = parts[parts.length - 1];
+                    const symbols = parts.slice(0, -1).join('');
 
                     // 記号をカウント
                     const counts = {
