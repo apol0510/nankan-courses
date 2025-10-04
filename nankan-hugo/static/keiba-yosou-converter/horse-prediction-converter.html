@@ -316,7 +316,9 @@
                 }
             }
 
-            // 60pt（印なし）の馬も含めて全て表示
+            // 印なし（60pt）の馬を除外
+            horses = horses.filter(h => h.addPoints > 0);
+
             // ポイント順でソート
             horses.sort((a, b) => b.totalPoints - a.totalPoints);
 
