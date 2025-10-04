@@ -348,12 +348,16 @@
 
             // 本命
             honmei.forEach(h => {
+                const halfPt = Math.round(h.totalPoints / 2);
                 output += `本命${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `#progress_bar(latency,info,active,${halfPt},軸馬指数${halfPt}％)\n`;
             });
 
             // 対抗
             taikou.forEach(h => {
+                const halfPt = Math.round(h.totalPoints / 2);
                 output += `対抗${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `#progress_bar(latency,info,active,${halfPt},軸馬指数${halfPt}％)\n`;
             });
 
             // 単穴
