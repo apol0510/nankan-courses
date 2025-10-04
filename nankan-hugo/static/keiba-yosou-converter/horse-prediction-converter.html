@@ -346,27 +346,27 @@
 
             // 本命
             honmei.forEach(h => {
-                output += `◎${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `本命${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 対抗
             taikou.forEach(h => {
-                output += `○${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `対抗${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 単穴
             tanaana.forEach(h => {
-                output += `▲${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `単穴${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 連下
             renka.forEach(h => {
-                output += `△${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `連下${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 抑え
             osae.forEach(h => {
-                output += `抑${h.number}${h.name}(${h.totalPoints}pt)\n`;
+                output += `抑え${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 買い目生成
