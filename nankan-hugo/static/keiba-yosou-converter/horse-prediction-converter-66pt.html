@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#667eea">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="予想変換66pt">
+    <meta name="apple-mobile-web-app-title" content="展開マスター">
     <link rel="manifest" href="./manifest.json">
-    <title>競馬予想データ変換システム (66pt版) - 南関競馬分析</title>
+    <title>競馬予想データ変換システム (展開マスター) - 南関競馬分析</title>
     <style>
         * {
             margin: 0;
@@ -191,7 +191,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏇 競馬予想データ変換システム (66pt版)</h1>
+            <h1>🏇 競馬予想データ変換システム (展開マスター)</h1>
             <p>南関競馬 - 予想記号を自動整理・買い目生成ツール</p>
         </div>
 
@@ -202,7 +202,6 @@
                     <li>テキストエリアにレースデータを貼り付け</li>
                     <li>「変換実行」ボタンをクリック</li>
                     <li>整理された予想と買い目が自動生成されます</li>
-                    <li><strong>ポイント設定:</strong> 全馬66ptスタート、◎=20pt, ○=10pt, ▲=15pt, △=5pt</li>
                 </ul>
             </div>
 
@@ -402,17 +401,20 @@
             const mates = [...mainNums.slice(2), ...subNums];
 
             if (axis.length >= 1 && mates.length >= 1) {
-                // 各軸馬について
+                // 各軸馬について（最大3段まで）
                 axis.forEach(ax => {
                     // 軸馬以外の全馬（もう一方の軸馬 + 相手馬）
                     const allMates = mainNums.filter(n => n !== ax).concat(subNums);
 
-                    // 軸馬と相手馬の全組み合わせ
+                    let lineCount = 0;
+                    // 軸馬と相手馬の全組み合わせ（最大3段）
                     allMates.forEach((mate, idx) => {
+                        if (lineCount >= 3) return; // 3段で打ち切り
                         // 3着候補を順次減らす
                         const thirds = allMates.slice(idx + 1);
                         if (thirds.length > 0) {
                             result += `${ax}－${mate}－${thirds.join('・')}\n`;
+                            lineCount++;
                         }
                     });
                 });
