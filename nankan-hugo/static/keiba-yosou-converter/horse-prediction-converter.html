@@ -301,7 +301,8 @@
                     };
 
                     // ポイント計算（◎=5, ○=4, ▲=3, △=2）
-                    const totalPoints = (counts['◎'] * 5) + (counts['○'] * 4) + (counts['▲'] * 3) + (counts['△'] * 2);
+                    const addPoints = (counts['◎'] * 5) + (counts['○'] * 4) + (counts['▲'] * 3) + (counts['△'] * 2);
+                    const totalPoints = 60 + addPoints; // 全馬60ptスタート
 
                     horses.push({
                         number,
@@ -309,14 +310,13 @@
                         symbols,
                         counts,
                         priority: calculatePriority(counts),
-                        totalPoints
+                        totalPoints,
+                        addPoints
                     });
                 }
             }
 
-            // 0点の馬を除外
-            horses = horses.filter(h => h.totalPoints > 0);
-
+            // 60pt（印なし）の馬も含めて全て表示
             // ポイント順でソート
             horses.sort((a, b) => b.totalPoints - a.totalPoints);
 
@@ -325,9 +325,7 @@
 
             // ポイント順位で記号を割り当て
             const classified = horses.map((h, index) => {
-                if (h.totalPoints === 0) {
-                    return { ...h, category: '抑' };
-                } else if (index === 0) {
+                if (index === 0) {
                     return { ...h, category: '◎' };
                 } else if (index === 1) {
                     return { ...h, category: '○' };
@@ -348,27 +346,27 @@
 
             // 本命
             honmei.forEach(h => {
-                output += `◎${h.number}${h.name}\n`;
+                output += `◎${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 対抗
             taikou.forEach(h => {
-                output += `○${h.number}${h.name}\n`;
+                output += `○${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 単穴
             tanaana.forEach(h => {
-                output += `▲${h.number}${h.name}\n`;
+                output += `▲${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 連下
             renka.forEach(h => {
-                output += `△${h.number}${h.name}\n`;
+                output += `△${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 抑え
             osae.forEach(h => {
-                output += `抑${h.number}${h.name}\n`;
+                output += `抑${h.number}${h.name}(${h.totalPoints}pt)\n`;
             });
 
             // 買い目生成
