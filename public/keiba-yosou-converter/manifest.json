@@ -1,0 +1,13 @@
+{
+  "name": "競馬予想データ変換システム",
+  "short_name": "予想変換",
+  "description": "南関競馬の予想データを自動整理・買い目生成するWebアプリ",
+  "start_url": "./horse-prediction-converter.html",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [],
+  "categories": ["productivity", "sports"],
+  "lang": "ja"
+}

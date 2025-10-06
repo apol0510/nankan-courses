@@ -19,3 +19,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Astro
+node_modules/
+dist/
+.astro/
+
+# Dependencies
+package-lock.json

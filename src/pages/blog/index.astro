@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+const sortedPosts = blogPosts.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+---
+
+<BaseLayout title="ブログ記事一覧" description="南関競馬のコース攻略法・距離別戦略を詳しく解説したブログ記事一覧">
+  <section class="blog-list-section">
+    <div class="container">
+      <h1>ブログ記事一覧</h1>
+      <p class="blog-intro">南関競馬（大井・船橋・川崎・浦和）の各コース・距離別攻略法を詳しく解説しています。</p>
+
+      <div class="blog-grid">
+        {sortedPosts.map((post) => (
+          <article class="blog-card">
+            <h2>
+              <a href={`/blog/${post.slug}/`}>
+                {post.data.title}
+              </a>
+            </h2>
+            {post.data.description && (
+              <p class="blog-excerpt">{post.data.description}</p>
+            )}
+            <div class="blog-meta">
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString('ja-JP', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+              {post.data.category && (
+                <span class="blog-category">{post.data.category}</span>
+              )}
+            </div>
+            {post.data.tags && post.data.tags.length > 0 && (
+              <div class="blog-tags">
+                {post.data.tags.map((tag: string) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.blog-list-section {
+  padding: 4rem 0;
+  min-height: 60vh;
+}
+
+.blog-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.blog-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.blog-card h2 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.blog-card h2 a:hover {
+  color: #0066cc;
+}
+
+.blog-excerpt {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.blog-category {
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tag {
+  background: #e8f4fd;
+  color: #0066cc;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+</style>

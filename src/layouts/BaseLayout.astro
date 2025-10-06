@@ -1,0 +1,134 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const siteTitle = "南関競馬コース攻略ガイド｜大井・船橋・川崎・浦和の特徴と予想のコツ【2025年最新版】";
+const siteDescription = "南関競馬（大井・船橋・川崎・浦和）の距離別コース攻略法を徹底解説。枠順有利不利、ペース傾向、地方競馬予想に役立つコース特徴を現役競馬ファンが分析。初心者から上級者まで必見の攻略情報満載。";
+const keywords = "南関競馬,船橋競馬場,川崎競馬場,大井競馬場,浦和競馬場,コース解説,競馬予想,枠順,攻略法,地方競馬";
+const author = "南関競馬コース解説";
+
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const pageDescription = description || siteDescription;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription}>
+    <meta name="keywords" content={keywords}>
+    <meta name="robots" content="index,follow">
+    <meta name="author" content={author}>
+    <meta name="language" content="ja">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href={Astro.url.href}>
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- パフォーマンス最適化 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://nankan-course.com">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={Astro.url.href}>
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={pageDescription}>
+    <meta property="og:image" content="/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={Astro.url.href}>
+    <meta property="twitter:title" content={pageTitle}>
+    <meta property="twitter:description" content={pageDescription}>
+    <meta property="twitter:image" content="/og-image.jpg">
+
+    <!-- Structured Data -->
+    {Astro.url.pathname === '/' && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": siteTitle,
+        "url": Astro.site,
+        "description": siteDescription,
+        "publisher": {
+            "@type": "Organization",
+            "name": author
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": `${Astro.site}?s={search_term_string}`,
+            "query-input": "required name=search_term_string"
+        }
+    })} />
+    )}
+</head>
+<body id="page-top">
+    <header id="top">
+        <nav>
+            <div class="container">
+                <h1><a href="/">南関競馬コース解説</a></h1>
+
+                <!-- ハンバーガーメニューボタン -->
+                <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-label="メニューを開く">
+                <label for="hamburger-toggle" class="hamburger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/blog/">ブログ</a></li>
+                    <li><a href="/ooi/">大井</a></li>
+                    <li><a href="/funabashi/">船橋</a></li>
+                    <li><a href="/kawasaki/">川崎</a></li>
+                    <li><a href="/urawa/">浦和</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <slot />
+    </main>
+
+    <!-- Scroll to Top Button - CSS Only -->
+    <a href="#page-top" class="scroll-to-top" aria-label="ページトップに戻る"></a>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav" aria-label="フッターナビゲーション">
+                <h3>サイトマップ</h3>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/blog/">ブログ</a></li>
+                    <li><a href="/ooi/">大井</a></li>
+                    <li><a href="/funabashi/">船橋</a></li>
+                    <li><a href="/kawasaki/">川崎</a></li>
+                    <li><a href="/urawa/">浦和</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <h3>関連リンク</h3>
+                <ul>
+                    <li><a href="https://www.tokyocitykeiba.com/" target="_blank" rel="noopener noreferrer">東京シティ競馬（大井）</a></li>
+                    <li><a href="https://www.f-keiba.com/" target="_blank" rel="noopener noreferrer">船橋競馬場</a></li>
+                    <li><a href="https://www.kawasaki-keiba.jp/" target="_blank" rel="noopener noreferrer">川崎競馬場</a></li>
+                    <li><a href="https://www.urawa-keiba.jp/" target="_blank" rel="noopener noreferrer">浦和競馬場</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2024 {author}. All rights reserved.</p>
+            <p>※競馬は20歳になってから。ギャンブル等依存症でお困りの方は各都道府県の相談窓口にご相談ください。</p>
+            <p>最終更新日: 2025年10月6日</p>
+        </div>
+    </footer>
+
+</body>
+</html>
