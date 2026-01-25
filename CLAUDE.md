@@ -82,11 +82,11 @@ This is a **100% static website** built with **Astro 5.14.1**, dedicated to expl
 **このプロジェクト専用設定**:
 - **専用ポート**: 4321（Astro標準ポート）
 - **起動コマンド**: `npm run dev`
-- **プロジェクトパス**: `/Users/apolon/Library/Mobile Documents/com~apple~CloudDocs/WorkSpace/nankan-course`
+- **プロジェクトパス**: `/Users/apolon/Projects/nankan-course`
 
 #### 開発ワークフロー（南関競馬サイト専用）
 1. **作業開始時**: 既存サーバープロセスをすべて停止
-2. **Astro開発**: `cd /Users/apolon/Library/Mobile\ Documents/com~apple~CloudDocs/WorkSpace/nankan-course && npm run dev`
+2. **Astro開発**: `cd /Users/apolon/Projects/nankan-course && npm run dev`
 3. **アクセスURL**: http://localhost:4321/
 4. **作業終了時**: `Ctrl+C` でサーバーを確実に停止
 5. **プロセス確認**: `ps aux | grep astro` で残存プロセスがないか確認
@@ -125,7 +125,7 @@ lsof -i :8000  # Python HTTPサーバー
 
 **記事テンプレート**: 新しいコース解説記事を作成する際は、必ず `2025-08-16-urawa-800m.md` をテンプレートとして使用すること。
 
-**テンプレートファイル位置**: `/Users/apolon/Library/Mobile Documents/com~apple~CloudDocs/WorkSpace/nankan-course/src/content/blog/2025-08-16-urawa-800m.md`
+**テンプレートファイル位置**: `/Users/apolon/Projects/nankan-course/src/content/blog/2025-08-16-urawa-800m.md`
 
 **Astroのフロントマター形式**:
 ```yaml
