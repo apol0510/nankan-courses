@@ -26,4 +26,8 @@ dist/
 .astro/
 
 # Dependencies
-package-lock.json
+package-lock.jsonnode_modules
+dist
+.astro
+.env
+.env.*
